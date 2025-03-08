@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import headerItemBanner from "../../assets/images/banners/headerItemBanner.png";
 
 function HeroBanner() {
   return (
-    <div className="bg-white text-black flex relative z-20 items-center overflow-hidden h-[80vh] ">
+    <div className="bg-white text-black flex relative z-20 items-center overflow-hidden  ">
       <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center py-16">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left ">
           <span className="w-20 h-2 bg-black mb-6"></span>
-          <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black leading-none text-black mb-4 lg:pt-0 pt-16">
+          <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black leading-none text-black mb-4">
             Experience
             <span className="block text-5xl sm:text-7xl">Sound</span>
           </h1>
@@ -21,18 +22,18 @@ function HeroBanner() {
             voluptate illo modi officiis numquam magni veniam voluptatem.
           </p>
           <div className="flex flex-col sm:flex-row">
-            <a
-              href="#"
+            <button
+              onClick={() => (window.location.href = "/products")}
               className="uppercase py-2 px-4 rounded-lg bg-black text-white border-2 border-transparent text-md mb-4 sm:mb-0 sm:mr-4 hover:bg-gray-800"
             >
               Shop Now
-            </a>
-            <a
-              href="#"
+            </button>
+            <Link
+              to="/"
               className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-black text-black hover:bg-black hover:text-white text-md"
             >
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
         <div className="lg:w-1/2 flex justify-center lg:justify-center mb-8 lg:mb-0">

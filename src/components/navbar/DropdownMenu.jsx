@@ -6,7 +6,7 @@ function DropdownMenu({ setIsLoggedIn }) {
   return (
     <div className="absolute right-0 mt-2 w-48 bg-white text-black rounded-lg shadow-sm">
       <div className="px-4 py-2 border-b border-gray-200">
-        <span className="block font-semibold">John Doe</span>
+        <span className="block font-semibold">Marisa Santos</span>
       </div>
       <Link to="/#" className="px-4 py-2 hover:bg-gray-200 flex items-center">
         <NavbarIcons.Profile className="mr-2" />
@@ -26,7 +26,7 @@ function DropdownMenu({ setIsLoggedIn }) {
       </Link>
       <button
         onClick={() => setIsLoggedIn(false)}
-        className="w-full text-left px-4 py-2 hover:bg-gray-200 flex items-center"
+        className="w-full text-left px-4 py-2 hover:bg-gray-200 flex items-center rounded-b-lg"
       >
         <NavbarIcons.Logout className="mr-2" />
         Logout

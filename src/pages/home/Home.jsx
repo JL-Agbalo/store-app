@@ -6,6 +6,7 @@ import {
   NewArrivals,
   Promotions,
   Testimonials,
+  CategoryList,
 } from "../../components/home";
 
 function Home() {
@@ -28,9 +29,10 @@ function Home() {
     <>
       <HeroBanner />
       <div className="container mx-auto p-6">
-        <FeaturedProducts products={products.slice(0, 8)} />
-        <NewArrivals products={products.slice(6, 12)} />
+        <FeaturedProducts products={products.slice(0, 4)} />
+        <NewArrivals products={products.slice(10, 14)} />
         <Promotions />
+        <CategoryList />
         <Testimonials />
       </div>
     </>
