@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import MainLayout from "../../components/layout/MainLayout";
+// import React, { useState, useEffect } from "react";
 
 function ProductDetail() {
   return <div>PRODUCT DETAILs</div>;

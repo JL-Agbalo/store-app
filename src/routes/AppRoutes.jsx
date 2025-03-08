@@ -1,10 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../components/layout/MainLayout";
-import Home from "../pages/home/Home";
-import Products from "../pages/product/Products";
-import ProductDetail from "../pages/product/ProductDetail";
-import Login from "../pages/auth/Login";
-import Signup from "../pages/auth/Signup";
+import { Home } from "../pages/home";
+import { Products, ProductDetail } from "../pages/product";
+import { Login, Signup } from "../pages/auth";
+import { Profile } from "../pages/profile";
 
 const AppRoutes = () => {
   return (
@@ -39,6 +38,14 @@ const AppRoutes = () => {
           </MainLayout>
         }
       />
+      {/* <Route
+        path="/profile"
+        element={
+          <MainLayout>
+            <Profile />
+          </MainLayout>
+        }
+      /> */}
     </Routes>
   );
 };

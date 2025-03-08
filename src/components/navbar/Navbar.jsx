@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { NavbarIcons as Icons } from "../icons";
-import DropdownMenu from "./DropdownMenu";
+import { DropdownMenu, Avatar } from "../index";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <nav className="bg-black text-white p-4">
+    <nav className="bg-black text-white p-4 sticky top-0 shadow-lg z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold">
-          StoreApp
+          Store App
         </Link>
 
         {/* Navigation Icons */}
@@ -36,7 +36,10 @@ function Navbar() {
                   onClick={() => setDropdownOpen(!dropdownOpen)}
                   className="flex items-center hover:text-gray-400 transition rounded-full bg-gray-800"
                 >
-                  <Icons.Profile className="w-6 h-6" />
+                  <Avatar
+                    src="https://i.imgur.com/DTfowdu.jpg"
+                    alt="User Avatar"
+                  />
                 </button>
                 {dropdownOpen && <DropdownMenu setIsLoggedIn={setIsLoggedIn} />}
               </div>
