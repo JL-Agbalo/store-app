@@ -1,5 +1,5 @@
 import React from "react";
-import Icons from "../components/icons/AuthIcons";
+import Icons from "../../components/icons/AuthIcons";
 
 function Signup() {
   return (

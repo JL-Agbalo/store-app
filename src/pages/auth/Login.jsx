@@ -1,7 +1,16 @@
 import React from "react";
-import Icons from "../components/icons/AuthIcons";
+import { useNavigate } from "react-router-dom";
+import Icons from "../../components/icons/AuthIcons";
 
 function Login() {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Add your authentication logic here
+    navigate("/");
+  };
+
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
       {/* Left Side - Login Form */}
@@ -9,7 +18,7 @@ function Login() {
         <div className="w-full max-w-md">
           <h2 className="text-4xl font-bold text-center mb-4">Sign In</h2>
           <p className="text-center text-gray-500 mb-8">Access your account</p>
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label className="block text-gray-700 mb-2">Email</label>
               <div className="flex items-center border border-gray-300 rounded-lg p-3">

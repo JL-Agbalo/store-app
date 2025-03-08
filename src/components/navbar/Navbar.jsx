@@ -4,7 +4,7 @@ import Icons from "../icons/NavbarIcon";
 import DropdownMenu from "./DropdownMenu";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
@@ -21,6 +21,9 @@ function Navbar() {
             <>
               <Link to="/" className="hover:text-gray-400 transition">
                 <Icons.Home className="w-5 h-5" />
+              </Link>
+              <Link to="/#" className="hover:text-gray-400 transition">
+                <Icons.Cart className="w-5 h-5" />
               </Link>
               <Link to="/#" className="hover:text-gray-400 transition">
                 <Icons.Message className="w-5 h-5" />
