@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Icons from "../icons/NavbarIcon";
+import { NavbarIcons as Icons } from "../icons";
 import DropdownMenu from "./DropdownMenu";
 
 function Navbar() {

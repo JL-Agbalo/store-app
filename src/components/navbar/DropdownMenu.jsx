@@ -8,7 +8,10 @@ function DropdownMenu({ setIsLoggedIn }) {
         <span className="block font-semibold">John Doe</span>
       </div>
       <Link to="/#" className="block px-4 py-2 hover:bg-gray-200">
-        Account
+        My Account
+      </Link>
+      <Link to="/#" className="block px-4 py-2 hover:bg-gray-200">
+        My Orders
       </Link>
       <Link to="/#" className="block px-4 py-2 hover:bg-gray-200">
         Settings
