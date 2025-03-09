@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "../components/layout/MainLayout";
 import { Home } from "../pages/home";
-import { Products, ProductDetail } from "../pages/product";
+import { Products, Product } from "../pages/product";
 import { Login, Signup } from "../pages/auth";
 import { Profile } from "../pages/profile";
 
@@ -30,11 +30,11 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/productDetail"
+        path="/Product"
         // path="/product/:id"
         element={
           <MainLayout>
-            <ProductDetail />
+            <Product />
           </MainLayout>
         }
       />

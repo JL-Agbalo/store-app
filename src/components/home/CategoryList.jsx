@@ -1,7 +1,7 @@
 import React from "react";
 
 function CategoryList() {
-  return <div></div>;
+  return <div>ADD HERE</div>;
 }
 
 export default CategoryList;

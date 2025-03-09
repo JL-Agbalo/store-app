@@ -29,7 +29,7 @@ function Home() {
     <>
       <HeroBanner />
       <div className="container mx-auto p-6">
-        <FeaturedProducts products={products.slice(0, 4)} />
+        <FeaturedProducts products={products.slice(1, 5)} />
         <NewArrivals products={products.slice(10, 14)} />
         <Promotions />
         <CategoryList />

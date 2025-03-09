@@ -19,3 +19,11 @@ export const registerUser = async (userData) => {
   const response = await axios.post(`${API_URL}/users/`, userData);
   return response.data;
 };
+
+export const getCategories = async () => {
+  const response = await axios.get(`${API_URL}/categories`);
+  return response.data;
+};
+
+// https://fake-shopapi.netlify.app/
+//  USE LATER
