@@ -30,8 +30,7 @@ const AppRoutes = () => {
         }
       />
       <Route
-        path="/Product"
-        // path="/product/:id"
+        path="/product/:id"
         element={
           <MainLayout>
             <Product />

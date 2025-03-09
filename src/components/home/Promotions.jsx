@@ -14,7 +14,7 @@ function Promotions() {
       </p>
 
       {/* Promotion Highlights */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mt-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
         <div className="bg-white p-4 rounded-lg flex flex-col items-center">
           <Icons.Tag className="text-3xl text-black mb-2" />
           <h3 className="font-semibold text-lg">Up to 50% Off</h3>
@@ -50,7 +50,7 @@ function Promotions() {
 
       {/* Call to Action Button */}
       <div className="flex justify-center mt-8">
-        <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition">
+        <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer">
           View Promotions
         </button>
       </div>

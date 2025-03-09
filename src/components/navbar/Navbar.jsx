@@ -12,7 +12,7 @@ function Navbar() {
   const messageCount = 0;
 
   return (
-    <nav className="bg-black text-white py-4 sticky top-0 shadow-lg z-50">
+    <nav className="bg-black text-white py-3 sticky top-0 shadow-lg z-50">
       <div className="container mx-auto flex justify-between items-center px-4 sm:px-6">
         {/* Logo */}
         <Link to="/" className="text-2xl font-bold">

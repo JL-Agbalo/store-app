@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getCategories } from "../../service/platziApi";
+import { Link } from "react-router-dom";
 
 const CategoryList = () => {
   const [categories, setCategories] = useState([]);
@@ -18,13 +19,13 @@ const CategoryList = () => {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-10">
+    <div className="mx-auto px-6 py-10">
       <h2 className="text-3xl font-semibold text-gray-800 mb-8">Categories</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {categories.map((category) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {categories.slice(0, 4).map((category) => (
           <div
             key={category.id}
-            className="relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group transform hover:scale-102"
+            className="relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden group transform hover:scale-102 cursor-pointer"
           >
             <img
               src={category.image}
@@ -37,6 +38,14 @@ const CategoryList = () => {
             </div>
           </div>
         ))}
+      </div>
+      <div className="flex justify-end mt-8">
+        <Link
+          to="/categories"
+          className="text-black font-semibold hover:underline transition"
+        >
+          Browse all categories →
+        </Link>
       </div>
     </div>
   );
