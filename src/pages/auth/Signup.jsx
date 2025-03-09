@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { AuthIcons as Icons } from "../../components/icons";
+import { SocialMedia } from "../../components/common";
 
 function Signup() {
   return (
@@ -58,28 +60,14 @@ function Signup() {
             >
               Sign Up
             </button>
-
             {/* Social Media Signup */}
-            <div className="mt-8">
-              <p className="text-center text-gray-500 mb-4">Or sign up with</p>
-              <div className="flex justify-center gap-4">
-                <button className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
-                  <Icons.Google className="w-5 h-5" /> Google
-                </button>
-                <button className="flex items-center gap-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-                  <Icons.Facebook className="w-5 h-5" /> Facebook
-                </button>
-                <button className="flex items-center gap-2 bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition">
-                  <Icons.Github className="w-5 h-5" /> GitHub
-                </button>
-              </div>
-            </div>
+            <SocialMedia title={"Or sign up with"} />
 
             <p className="text-center text-gray-500 mt-6">
               Already have an account?{" "}
-              <a href="/login" className="text-black font-semibold">
+              <Link to="/login" className="text-black font-semibold">
                 Sign In
-              </a>
+              </Link>
             </p>
           </form>
         </div>
