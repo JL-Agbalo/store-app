@@ -21,10 +21,9 @@ function Product() {
   }, [id]);
 
   return (
-    <div>
-      {product && <pre>{JSON.stringify(product, null, 2)}</pre>}
-      <ProductItem product={product} />
-      <RelatedProducts categoryId={product.category.id} />
+    <div className="max-w-6xl mx-auto p-6">
+      {product ? <ProductItem product={product} /> : <p>Loading...</p>}
+      <RelatedProducts categoryId={1} />
     </div>
   );
 }

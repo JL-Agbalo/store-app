@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import ProductCard from "./ProductCard";
 import { getProductsByCategory } from "../../service/platziApi";
 
-function RelatedProduct({ categoryId }) {
+function RelatedProduct({ categoryId = 1 }) {
   const [relatedProducts, setrelatedProducts] = useState([]);
 
   useEffect(() => {
