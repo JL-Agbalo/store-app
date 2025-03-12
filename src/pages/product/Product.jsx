@@ -21,7 +21,7 @@ function Product() {
   }, [id]);
 
   return (
-    <div className="max-w-6xl mx-auto p-6">
+    <div className="max-w-6xl mx-auto p-6 pb-15">
       {product ? <ProductItem product={product} /> : <p>Loading...</p>}
       <RelatedProducts categoryId={1} />
     </div>

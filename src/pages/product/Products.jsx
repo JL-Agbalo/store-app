@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { ProductList } from "../../components/product";
-import { getProducts } from "../../service/platziApi";
+// import { getProducts } from "../../service/platziApi";
+import { products as getProductsData } from "../../data/ProductData";
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -8,7 +9,7 @@ function Products() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await getProducts();
+        const data = getProductsData;
         setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
