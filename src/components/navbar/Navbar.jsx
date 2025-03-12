@@ -53,7 +53,7 @@ function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center hover:text-gray-400 transition rounded-full bg-gray-800"
+                  className="flex items-center hover:text-gray-400 transition rounded-full"
                 >
                   <Avatar
                     src="https://i.imgur.com/DTfowdu.jpg"

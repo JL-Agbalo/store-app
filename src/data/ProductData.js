@@ -159,25 +159,6 @@ export const products = [
     updatedAt: "2025-03-12T03:43:56.000Z",
   },
   {
-    id: 26,
-    title: "Futuristic Holographic Soccer Cleats Knees",
-    slug: "futuristic-holographic-soccer-cleats-knees",
-    price: 4,
-    description:
-      "Enhance your smartphone's look with this ultra-sleek mirror finish phone case. Designed to offer style with protection, the case features a reflective surface that adds a touch of elegance while keeping your device safe from scratches and impacts. Perfect for those who love a minimalist and modern aesthetic.",
-    category: {
-      id: 2,
-      name: "Electronics",
-      slug: "electronics",
-      image: "https://i.imgur.com/ZANVnHE.jpeg",
-      creationAt: "2025-03-11T15:01:29.000Z",
-      updatedAt: "2025-03-12T09:00:07.000Z",
-    },
-    images: ["https://loremflickr.com/g/320/240/paris", "girl/all"],
-    creationAt: "2025-03-11T15:01:29.000Z",
-    updatedAt: "2025-03-12T11:07:45.000Z",
-  },
-  {
     id: 27,
     title: "ghazaleh joonnn kojayi chera pish ma nayayi",
     slug: "ghazaleh-joonnn-kojayi-chera-pish-ma-nayayi",
@@ -615,6 +596,30 @@ export const products = [
   },
 ];
 
+export const product = {
+  id: 16,
+  title: "Classic White Tee - Timeless Style and Comfort",
+  slug: "classic-white-tee-timeless-style-and-comfort",
+  price: 73,
+  description:
+    "Elevate your everyday wardrobe with our Classic White Tee. Crafted from premium soft cotton material, this versatile t-shirt combines comfort with durability, perfect for daily wear. Featuring a relaxed, unisex fit that flatters every body type, it's a staple piece for any casual ensemble. Easy to care for and machine washable, this white tee retains its shape and softness wash after wash. Pair it with your favorite jeans or layer it under a jacket for a smart look.",
+  category: {
+    id: 1,
+    name: "Clothes",
+    slug: "clothes",
+    image: "https://i.imgur.com/QkIa5tT.jpeg",
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  images: [
+    "https://i.imgur.com/Y54Bt8J.jpeg",
+    "https://i.imgur.com/SZPDSgy.jpeg",
+    "https://i.imgur.com/sJv4Xx0.jpeg",
+  ],
+  creationAt: "2025-03-11T15:01:29.000Z",
+  updatedAt: "2025-03-11T15:01:29.000Z",
+};
+
 export const users = [
   {
     id: 1,
@@ -632,11 +637,267 @@ export const users = [
 export const categories = [
   {
     id: 1,
-    name: "Category 1",
+    name: "Clothes",
+    slug: "clothes",
+    image: "https://i.imgur.com/QkIa5tT.jpeg",
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
   },
   {
     id: 2,
-    name: "Category 2",
+    name: "Electronics",
+    slug: "electronics",
+    image: "https://i.imgur.com/ZANVnHE.jpeg",
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-12T09:00:07.000Z",
   },
-  // ...more categories...
+  {
+    id: 3,
+    name: "Moderno",
+    slug: "moderno",
+    image: "https://i.imgur.com/Qphac99.jpeg",
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T17:11:49.000Z",
+  },
+  {
+    id: 4,
+    name: "Shoes",
+    slug: "shoes",
+    image: "https://i.imgur.com/qNOjJje.jpeg",
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 5,
+    name: "Miscellaneous",
+    slug: "miscellaneous",
+    image: "https://i.imgur.com/BG8J0Fj.jpg",
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-12T08:56:48.000Z",
+  },
+];
+
+export const relatedProduct = [
+  {
+    id: 35,
+    title: "Futuristic Holographic Soccer Cleats",
+    slug: "futuristic-holographic-soccer-cleats",
+    price: 39,
+    description:
+      "Step onto the field and stand out from the crowd with these eye-catching holographic soccer cleats. Designed for the modern player, these cleats feature a sleek silhouette, lightweight construction for maximum agility, and durable studs for optimal traction. The shimmering holographic finish reflects a rainbow of colors as you move, ensuring that you'll be noticed for both your skills and style. Perfect for the fashion-forward athlete who wants to make a statement.",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/qNOjJje.jpeg",
+      "https://i.imgur.com/NjfCFnu.jpeg",
+      "https://i.imgur.com/eYtvXS1.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 36,
+    title: "Rainbow Glitter High Heels",
+    slug: "rainbow-glitter-high-heels",
+    price: 39,
+    description:
+      "Step into the spotlight with these eye-catching rainbow glitter high heels. Designed to dazzle, each shoe boasts a kaleidoscope of shimmering colors that catch and reflect light with every step. Perfect for special occasions or a night out, these stunners are sure to turn heads and elevate any ensemble.",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/62gGzeF.jpeg",
+      "https://i.imgur.com/5MoPuFM.jpeg",
+      "https://i.imgur.com/sUVj7pK.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 37,
+    title: "Chic Summer Denim Espadrille Sandals",
+    slug: "chic-summer-denim-espadrille-sandals",
+    price: 33,
+    description:
+      "Step into summer with style in our denim espadrille sandals. Featuring a braided jute sole for a classic touch and adjustable denim straps for a snug fit, these sandals offer both comfort and a fashionable edge. The easy slip-on design ensures convenience for beach days or casual outings.",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/9qrmE1b.jpeg",
+      "https://i.imgur.com/wqKxBVH.jpeg",
+      "https://i.imgur.com/sWSV6DK.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 40,
+    title: "Futuristic Silver and Gold High-Top Sneaker",
+    slug: "futuristic-silver-and-gold-high-top-sneaker",
+    price: 68,
+    description:
+      "Step into the future with this eye-catching high-top sneaker, designed for those who dare to stand out. The sneaker features a sleek silver body with striking gold accents, offering a modern twist on classic footwear. Its high-top design provides support and style, making it the perfect addition to any avant-garde fashion collection. Grab a pair today and elevate your shoe game!",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/npLfCGq.jpeg",
+      "https://i.imgur.com/vYim3gj.jpeg",
+      "https://i.imgur.com/HxuHwBO.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 41,
+    title: "Futuristic Chic High-Heel Boots",
+    slug: "futuristic-chic-high-heel-boots",
+    price: 36,
+    description:
+      "Elevate your style with our cutting-edge high-heel boots that blend bold design with avant-garde aesthetics. These boots feature a unique color-block heel, a sleek silhouette, and a versatile light grey finish that pairs easily with any cutting-edge outfit. Crafted for the fashion-forward individual, these boots are sure to make a statement.",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/HqYqLnW.jpeg",
+      "https://i.imgur.com/RlDGnZw.jpeg",
+      "https://i.imgur.com/qa0O6fg.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 42,
+    title: "Elegant Patent Leather Peep-Toe Pumps with Gold-Tone Heel",
+    slug: "elegant-patent-leather-peep-toe-pumps",
+    price: 53,
+    description:
+      "Step into sophistication with these chic peep-toe pumps, showcasing a lustrous patent leather finish and an eye-catching gold-tone block heel. The ornate buckle detail adds a touch of glamour, perfect for elevating your evening attire or complementing a polished daytime look.",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/AzAY4Ed.jpeg",
+      "https://i.imgur.com/umfnS9P.jpeg",
+      "https://i.imgur.com/uFyuvLg.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 43,
+    title: "Elegant Purple Leather Loafers",
+    slug: "elegant-purple-leather-loafers",
+    price: 17,
+    description:
+      "Step into sophistication with our Elegant Purple Leather Loafers, perfect for making a bold statement. Crafted from high-quality leather with a vibrant purple finish, these shoes feature a classic loafer silhouette that's been updated with a contemporary twist. The comfortable slip-on design and durable soles ensure both style and functionality for the modern man.",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/Au8J9sX.jpeg",
+      "https://i.imgur.com/gdr8BW2.jpeg",
+      "https://i.imgur.com/KDCZxnJ.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 44,
+    title: "Classic Blue Suede Casual Shoes",
+    slug: "classic-blue-suede-casual-shoes",
+    price: 39,
+    description:
+      "Step into comfort with our Classic Blue Suede Casual Shoes, perfect for everyday wear. These shoes feature a stylish blue suede upper, durable rubber soles for superior traction, and classic lace-up fronts for a snug fit. The sleek design pairs well with both jeans and chinos, making them a versatile addition to any wardrobe.",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://i.imgur.com/sC0ztOB.jpeg",
+      "https://i.imgur.com/Jf9DL9R.jpeg",
+      "https://i.imgur.com/R1IN95T.jpeg",
+    ],
+    creationAt: "2025-03-11T15:01:29.000Z",
+    updatedAt: "2025-03-11T15:01:29.000Z",
+  },
+  {
+    id: 62,
+    title: "test",
+    slug: "test",
+    price: 20,
+    description: "zapatos de prueba",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: ["https://bassil.com.ec/producto/zapato-negro-de-cuero/"],
+    creationAt: "2025-03-11T18:09:42.000Z",
+    updatedAt: "2025-03-11T18:09:42.000Z",
+  },
+  {
+    id: 63,
+    title: "zapatos",
+    slug: "zapatos",
+    price: 23,
+    description: "test",
+    category: {
+      id: 4,
+      name: "Shoes",
+      slug: "shoes",
+      image: "https://i.imgur.com/qNOjJje.jpeg",
+      creationAt: "2025-03-11T15:01:29.000Z",
+      updatedAt: "2025-03-11T15:01:29.000Z",
+    },
+    images: [
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.es%2Fvector-premium%2Fdibujo-zapato-que-tiene-banda-marron_53617253.htm&psig=AOvVaw3KhJpl9JbfALs8oPpKiNTg&ust=1741802634615000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCKCY7p_PgowDFQAAAAAdAAAAABAJ",
+    ],
+    creationAt: "2025-03-11T18:12:34.000Z",
+    updatedAt: "2025-03-11T18:12:34.000Z",
+  },
 ];

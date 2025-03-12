@@ -1,23 +1,6 @@
 import React, { useState } from "react";
-import { ProductIcons as Icons } from "../icons";
-function ProductItem() {
-  const product = {
-    id: 11,
-    title: "Classic Red Baseball Cap",
-    price: 35,
-    description:
-      "Elevate your casual wardrobe with this timeless red baseball cap. Crafted from durable fabric, it features a comfortable fit with an adjustable strap at the back, ensuring one size fits all. Perfect for sunny days or adding a sporty touch to your outfit.",
-    category: {
-      name: "Clothes",
-      image: "https://i.imgur.com/QkIa5tT.jpeg",
-    },
-    images: [
-      "https://i.imgur.com/cBuLvBi.jpeg",
-      "https://i.imgur.com/N1GkCIR.jpeg",
-      "https://i.imgur.com/kKc9A5p.jpeg",
-    ],
-  };
-
+import { ProductIcons as Icons } from "../../components/icons";
+function ProductItem({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
   const [quantity, setQuantity] = useState(1);
 
@@ -81,7 +64,7 @@ function ProductItem() {
 
           {/* Quantity and Wishlist */}
           <div className="flex items-center justify-between mt-6">
-            <div className="flex items-center border border-gray-400 rounded-lg px-3 py-1">
+            <div className="flex items-center border border-gray-400 rounded-lg px-4 py-1">
               <button
                 className="p-2 text-gray-700 hover:text-black"
                 onClick={decreaseQuantity}

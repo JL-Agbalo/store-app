@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { getCategories } from "../../service/platziApi";
+// import { getCategories } from "../../service/platziApi";
 import { Link } from "react-router-dom";
+import { categories as getCategories } from "../../data/ProductData";
 
 const CategoryList = () => {
   const [categories, setCategories] = useState([]);
@@ -8,7 +9,7 @@ const CategoryList = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const data = await getCategories();
+        const data = getCategories;
         setCategories(data);
       } catch (error) {
         console.error("Error fetching categories:", error);
