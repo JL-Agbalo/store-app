@@ -5,7 +5,7 @@ import headerItemBanner from "../../assets/images/banners/headerItemBanner.png";
 function HeroBanner() {
   return (
     <div className="bg-white text-black flex relative z-20 items-center overflow-hidden">
-      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center py-16">
+      <div className="container mx-auto px-6 flex flex-col lg:flex-row items-center py-16 max-w-7xl">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left">
           <span className="w-20 h-2 bg-black mb-6"></span>
           <h1 className="font-bebas-neue uppercase text-6xl sm:text-8xl font-black leading-none text-black mb-4">

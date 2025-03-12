@@ -3,7 +3,7 @@ import { testimonials } from "../../data/ProductData";
 
 function Testimonials() {
   return (
-    <div className="mx-auto px-6 py-10">
+    <div className="mx-auto px-6 py-10 max-w-7xl">
       <div className="text-center mb-12">
         <h2 className="text-3xl font-semibold text-gray-800">
           Customer Testimonials
@@ -43,10 +43,13 @@ function Testimonials() {
         ))}
       </div>
 
-      <div className="text-center mt-12">
-        <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer">
-          View Promotions
-        </button>
+      <div className="flex justify-end mt-8">
+        <a
+          to="/"
+          className="text-black font-semibold hover:underline transition"
+        >
+          Read More Reviews →
+        </a>
       </div>
     </div>
   );

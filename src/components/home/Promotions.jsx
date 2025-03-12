@@ -4,11 +4,10 @@ import { Link } from "react-router-dom";
 
 function Promotions() {
   return (
-    <section className="py-10 relative">
-      <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-12 gap-y-11">
-          <div className="col-span-12 lg:col-span-7 py-12 px-6 lg:px-12 bg-gray-50 max-lg:rounded-2xl lg:rounded-l-2xl flex flex-col justify-between max-lg:max-w-lg max-lg:mx-auto relative overflow-hidden">
-            {/* Background decorative element */}
+    <div className="container mx-auto">
+      <section className="py-10 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-11">
+          <div className="col-span-1 lg:col-span-7 p-12 bg-gray-50 rounded-2xl lg:rounded-l-2xl lg:rounded-r-none flex flex-col justify-between relative overflow-hidden">
             <div className="absolute -top-10 -right-10 w-32 h-32 bg-black opacity-5 rounded-full"></div>
 
             {/* Header with accent */}
@@ -20,7 +19,7 @@ function Promotions() {
               </h2>
             </div>
 
-            <p className="text-lg text-gray-700 mb-8 max-w-xl">
+            <p className="text-lg text-gray-700 mb-8">
               Unlock premium savings with our limited-time offers on bestselling
               products. Members get early access to flash sales and seasonal
               discounts.
@@ -73,22 +72,21 @@ function Promotions() {
                 to="/"
                 className="text-black font-medium flex items-center gap-2 hover:underline"
               >
-                See all promotions
-                <Icons.RightArrow />
+                See all promotions →
               </Link>
             </div>
           </div>
 
-          <div className="col-span-12 lg:col-span-5 lg:max-w-md max-lg:mx-auto">
+          <div className="col-span-1 lg:col-span-5 hidden lg:block">
             <img
               src="https://placehold.co/600x400"
               alt="Promotions Banner"
-              className="w-full h-full max-lg:rounded-3xl lg:rounded-r-2xl object-cover"
+              className="w-full h-full rounded-r-2xl object-cover"
             />
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
 

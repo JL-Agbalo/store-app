@@ -30,7 +30,7 @@ function Home() {
   return (
     <>
       <HeroBanner />
-      <div className="container mx-auto p-6">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
         <FeaturedProducts products={products.slice(1, 5)} />
         <Promotions />
         <NewArrivals products={products.slice(10, 14)} />
