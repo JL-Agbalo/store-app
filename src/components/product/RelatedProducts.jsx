@@ -1,28 +1,21 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
-// import { getProductsByCategory } from "../../service/platziApi";
-import { relatedProduct as getProductsByCategory } from "../../data/ProductData";
+import { getProductsByCategory } from "../../data/ProductData";
 
-function RelatedProduct() {
-  // { categoryId = 1 }
+function RelatedProduct({ categoryId }) {
   const [relatedProducts, setrelatedProducts] = useState([]);
 
-  useEffect(
-    () => {
-      async function fetchRelatedProducts() {
-        try {
-          const products = getProductsByCategory;
-          setrelatedProducts(products);
-        } catch (error) {
-          console.error("Error fetching related products:", error);
-        }
+  useEffect(() => {
+    async function fetchRelatedProducts() {
+      try {
+        const products = getProductsByCategory(categoryId);
+        setrelatedProducts(products);
+      } catch (error) {
+        console.error("Error fetching related products:", error);
       }
-      fetchRelatedProducts();
-    },
-    [
-      // categoryId
-    ]
-  );
+    }
+    fetchRelatedProducts();
+  }, [categoryId]);
 
   return (
     <div>

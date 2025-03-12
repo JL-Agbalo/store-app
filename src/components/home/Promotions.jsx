@@ -1,60 +1,94 @@
 import React from "react";
 import { Home as Icons } from "../icons";
+import { Link } from "react-router-dom";
 
 function Promotions() {
   return (
-    <div className="my-12 px-4">
-      {/* Header Section */}
-      <h2 className="text-3xl font-semibold mb-4 text-center text-black">
-        Special Promotions
-      </h2>
-      <p className="text-lg mb-4 text-center text-gray-700">
-        Enjoy exclusive discounts and limited-time offers on a wide range of
-        products. Don’t miss out on these incredible deals!
-      </p>
+    <section className="py-10 relative">
+      <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-12 gap-y-11">
+          <div className="col-span-12 lg:col-span-7 py-12 px-6 lg:px-12 bg-gray-50 max-lg:rounded-2xl lg:rounded-l-2xl flex flex-col justify-between max-lg:max-w-lg max-lg:mx-auto relative overflow-hidden">
+            {/* Background decorative element */}
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-black opacity-5 rounded-full"></div>
 
-      {/* Promotion Highlights */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-        <div className="bg-white p-4 rounded-lg flex flex-col items-center">
-          <Icons.Tag className="text-3xl text-black mb-2" />
-          <h3 className="font-semibold text-lg">Up to 50% Off</h3>
-          <p className="text-gray-600 text-sm">
-            Save big on selected categories!
-          </p>
-        </div>
+            {/* Header with accent */}
+            <div className="mb-8">
+              <div className="w-16 h-1 bg-black mb-4"></div>
+              <h2 className="font-manrope font-bold text-3xl sm:text-4xl leading-tight text-black">
+                Exclusive Deals <span className="text-gray-600">&</span> Special
+                Promotions
+              </h2>
+            </div>
 
-        <div className="bg-white p-4 rounded-lg flex flex-col items-center">
-          <Icons.Gift className="text-3xl text-black mb-2" />
-          <h3 className="font-semibold text-lg">Exclusive Coupons</h3>
-          <p className="text-gray-600 text-sm">
-            Unlock special discounts with promo codes.
-          </p>
-        </div>
+            <p className="text-lg text-gray-700 mb-8 max-w-xl">
+              Unlock premium savings with our limited-time offers on bestselling
+              products. Members get early access to flash sales and seasonal
+              discounts.
+            </p>
 
-        <div className="bg-white p-4 rounded-lg flex flex-col items-center">
-          <Icons.Clock className="text-3xl text-black mb-2" />
-          <h3 className="font-semibold text-lg">Limited Time Only</h3>
-          <p className="text-gray-600 text-sm">
-            Hurry before these deals disappear!
-          </p>
-        </div>
+            {/* Promotions highlights in cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-full bg-black">
+                    <Icons.Tag className="text-white" size={18} />
+                  </div>
+                  <h3 className="font-semibold text-black">50% Off</h3>
+                </div>
+                <p className="text-sm text-gray-600">
+                  On selected premium items
+                </p>
+              </div>
 
-        <div className="bg-white p-4 rounded-lg flex flex-col items-center">
-          <Icons.ShoppingCart className="text-3xl text-black mb-2" />
-          <h3 className="font-semibold text-lg">Buy More, Save More</h3>
-          <p className="text-gray-600 text-sm">
-            Special bulk discounts available now!
-          </p>
+              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-full bg-black">
+                    <Icons.Gift className="text-white" size={18} />
+                  </div>
+                  <h3 className="font-semibold text-black">Free Gift</h3>
+                </div>
+                <p className="text-sm text-gray-600">With purchases over $50</p>
+              </div>
+
+              <div className="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="p-2 rounded-full bg-black">
+                    <Icons.Clock className="text-white" size={18} />
+                  </div>
+                  <h3 className="font-semibold text-black">Flash Sale</h3>
+                </div>
+                <p className="text-sm text-gray-600">Ends in 48 hours</p>
+              </div>
+            </div>
+
+            {/* CTA section */}
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <Link
+                to="/products"
+                className="flex items-center rounded-full py-3 px-6 w-full sm:w-auto justify-center bg-black text-white font-semibold hover:bg-gray-800 transition-all duration-300"
+              >
+                Shop Now
+              </Link>
+              <Link
+                to="/"
+                className="text-black font-medium flex items-center gap-2 hover:underline"
+              >
+                See all promotions
+                <Icons.RightArrow />
+              </Link>
+            </div>
+          </div>
+
+          <div className="col-span-12 lg:col-span-5 lg:max-w-md max-lg:mx-auto">
+            <img
+              src="https://placehold.co/600x400"
+              alt="Promotions Banner"
+              className="w-full h-full max-lg:rounded-3xl lg:rounded-r-2xl object-cover"
+            />
+          </div>
         </div>
       </div>
-
-      {/* Call to Action Button */}
-      <div className="flex justify-center mt-8">
-        <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer">
-          View Promotions
-        </button>
-      </div>
-    </div>
+    </section>
   );
 }
 

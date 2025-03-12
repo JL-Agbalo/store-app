@@ -1,66 +1,52 @@
 import React from "react";
+import { testimonials } from "../../data/ProductData";
 
 function Testimonials() {
   return (
-    <div className="my-12 px-4">
-      <h2 className="text-3xl font-semibold mb-4 text-center">
-        What Our Customers Say
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <div className="bg-white p-6 rounded-lg text-center flex flex-col justify-between">
-          <p className="text-lg mb-4 italic">
-            "Great products and amazing customer service!"
-          </p>
-          <div>
-            <p className="font-semibold">- John Doe</p>
-            <p className="text-sm mt-2">⭐⭐⭐⭐⭐</p>
+    <div className="mx-auto px-6 py-10">
+      <div className="text-center mb-12">
+        <h2 className="text-3xl font-semibold text-gray-800">
+          Customer Testimonials
+        </h2>
+        <p className="text-gray-600 mt-2 max-w-xl mx-auto">
+          Hear what our satisfied customers have to say about our products.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center"
+          >
+            <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-gray-300 mb-4">
+              <img
+                src={testimonial.image}
+                alt={testimonial.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <h3 className="text-lg font-medium text-gray-900 mb-1">
+              {testimonial.name}
+            </h3>
+            <div className="flex text-yellow-400 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <span key={i} className="mr-0.5">
+                  {i < testimonial.rating ? "★" : "☆"}
+                </span>
+              ))}
+            </div>
+            <p className="text-gray-700 text-center mb-4">
+              {testimonial.feedback}
+            </p>
           </div>
-        </div>
-        <div className="bg-white p-6 rounded-lg text-center flex flex-col justify-between">
-          <p className="text-lg mb-4 italic">
-            "I love shopping here. The quality is top-notch."
-          </p>
-          <div>
-            <p className="font-semibold">- Jane Smith</p>
-            <p className="text-sm mt-2">⭐⭐⭐⭐⭐</p>
-          </div>
-        </div>
-        <div className="bg-white p-6 rounded-lg text-center flex flex-col justify-between">
-          <p className="text-lg mb-4 italic">
-            "Fast shipping and great prices. Highly recommend!"
-          </p>
-          <div>
-            <p className="font-semibold">- Michael Johnson</p>
-            <p className="text-sm mt-2">⭐⭐⭐⭐⭐</p>
-          </div>
-        </div>
-        <div className="bg-white p-6 rounded-lg text-center flex flex-col justify-between">
-          <p className="text-lg mb-4 italic">
-            "Excellent customer support and fast delivery."
-          </p>
-          <div>
-            <p className="font-semibold">- Sarah Williams</p>
-            <p className="text-sm mt-2">⭐⭐⭐⭐⭐</p>
-          </div>
-        </div>
-        <div className="bg-white p-6 rounded-lg text-center flex flex-col justify-between">
-          <p className="text-lg mb-4 italic">
-            "The products are of great quality and affordable."
-          </p>
-          <div>
-            <p className="font-semibold">- David Brown</p>
-            <p className="text-sm mt-2">⭐⭐⭐⭐⭐</p>
-          </div>
-        </div>
-        <div className="bg-white p-6 rounded-lg text-center flex flex-col justify-between">
-          <p className="text-lg mb-4 italic">
-            "I am very satisfied with my purchase. Will shop again!"
-          </p>
-          <div>
-            <p className="font-semibold">- Emily Clark</p>
-            <p className="text-sm mt-2">⭐⭐⭐⭐⭐</p>
-          </div>
-        </div>
+        ))}
+      </div>
+
+      <div className="text-center mt-12">
+        <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition cursor-pointer">
+          View Promotions
+        </button>
       </div>
     </div>
   );
