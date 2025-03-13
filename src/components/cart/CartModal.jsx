@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CartItem from "./CartItem";
 import { products } from "../../data/ProductData";
-import { CartIcons as Icons } from "../icons";
+import { Cart as Icons } from "../icons/Icons";
 
 const CartModal = ({ isOpen, onClose }) => {
   const [cartItems, setCartItems] = useState(products.slice(0, 6));

@@ -1,5 +1,5 @@
 import React from "react";
-import { AuthIcons as Icons } from "../../components/icons";
+import { Auth as Icons } from "../../components/icons/Icons";
 function SocialMedia({ title }) {
   return (
     <div className="mt-8">

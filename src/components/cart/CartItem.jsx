@@ -1,5 +1,5 @@
 import React from "react";
-import { CartIcons as Icons } from "../icons";
+import { Cart as Icons } from "../icons/Icons";
 const CartItem = ({ item }) => {
   return (
     <div className="grid grid-cols-5 gap-4 border-b py-4 items-center">

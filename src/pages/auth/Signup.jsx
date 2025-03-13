@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { AuthIcons as Icons } from "../../components/icons";
 import { SocialMedia } from "../../components/common";
 
 function Signup() {

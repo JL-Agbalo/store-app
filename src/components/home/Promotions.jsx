@@ -1,5 +1,5 @@
 import React from "react";
-import { Home as Icons } from "../icons";
+import { Home as Icons } from "../icons/Icons";
 import { Link } from "react-router-dom";
 
 function Promotions() {

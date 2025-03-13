@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { NavbarIcons as Icons } from "../icons";
+import { Navbar as Icons } from "../icons/Icons";
 import { Avatar } from "../index";
 import NavDropdown from "./NavDropdown";
 import { CartModal } from "../../components/cart";

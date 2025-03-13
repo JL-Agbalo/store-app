@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { AuthIcons as Icons } from "../../components/icons";
+import { Auth as Icons } from "../../components/icons/Icons";
 import { SocialMedia } from "../../components/common";
 
 function Login() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ProductIcons as Icons } from "../../components/icons";
+import { Product as Icons } from "../../components/icons/Icons";
 function ProductItem({ product }) {
   const [selectedImage, setSelectedImage] = useState(product.images[0]);
   const [quantity, setQuantity] = useState(1);
