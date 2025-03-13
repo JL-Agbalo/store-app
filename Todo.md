@@ -12,7 +12,6 @@
 - [x] Create `Home` page
 - [x] Create `Products` page (displays all products)
 - [x] Create `Product Details` page
-- [ ] Create `Categories` page
 - [ ] Create `Cart` page
 - [ ] Create `Checkout` page
 - [ ] Create `Order Summary` page
