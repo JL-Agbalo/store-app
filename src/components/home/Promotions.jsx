@@ -8,7 +8,7 @@ function Promotions() {
       <section className="py-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-y-11">
           <div className="col-span-1 lg:col-span-7 p-12 bg-gray-50 rounded-2xl lg:rounded-l-2xl lg:rounded-r-none flex flex-col justify-between relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-black opacity-5 rounded-full"></div>
+            {/* <div className="absolute -top-10 -right-10 w-32 h-32 bg-black opacity-5 rounded-full"></div> */}
 
             {/* Header with accent */}
             <div className="mb-8">

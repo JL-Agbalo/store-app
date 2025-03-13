@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { NavbarIcons as Icons } from "../icons";
 import { Avatar } from "../index";
 import NavDropdown from "./NavDropdown";
+import { CartModal } from "../../components/cart";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false); // Add state for cart modal
   const cartCount = 5;
   const notificationCount = 3;
   const messageCount = 0;
@@ -26,14 +28,17 @@ function Navbar() {
               <Link to="/" className="hover:text-gray-400 transition">
                 <Icons.Home className="w-5 h-5" />
               </Link>
-              <Link to="/#" className="relative hover:text-gray-400 transition">
+              <button
+                onClick={() => setIsCartOpen(true)} // Open cart modal on click
+                className="relative hover:text-gray-400 transition"
+              >
                 <Icons.Cart className="w-5 h-5" />
                 {cartCount > 0 && (
                   <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
                     {cartCount}
                   </div>
                 )}
-              </Link>
+              </button>
               <Link to="/#" className="relative hover:text-gray-400 transition">
                 <Icons.Message className="w-5 h-5" />
                 {messageCount > 0 && (
@@ -75,6 +80,11 @@ function Navbar() {
           )}
         </div>
       </div>
+      <CartModal
+        isOpen={isCartOpen}
+        onClose={() => setIsCartOpen(false)}
+        cartItems={[]}
+      />
     </nav>
   );
 }

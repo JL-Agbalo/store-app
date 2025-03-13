@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ProductCard from "./ProductCard";
+import ProductCard from "./ProductDetails";
 import { getProductsByCategory } from "../../data/ProductData";
 
 function RelatedProduct({ categoryId }) {

@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function ProductDetails({ product }) {
+function ProductCard({ product }) {
   return (
-    <>
+    <Link
+      to={`/product/${product.id}`}
+      className="group transform hover:scale-105 transition-transform duration-300 cursor-pointer"
+    >
       <img
         src={product.images[0]}
         alt={product.title}
@@ -15,8 +19,8 @@ function ProductDetails({ product }) {
       <p className="mt-1 text-lg font-semibold text-gray-900">
         ${product.price}
       </p>
-    </>
+    </Link>
   );
 }
 
-export default ProductDetails;
+export default ProductCard;

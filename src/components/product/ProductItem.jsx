@@ -64,7 +64,7 @@ function ProductItem({ product }) {
 
           {/* Quantity and Wishlist */}
           <div className="flex items-center justify-between mt-6">
-            <div className="flex items-center border border-gray-400 rounded-lg px-4 py-1">
+            <div className="flex items-center px-4 py-1">
               <button
                 className="p-2 text-gray-700 hover:text-black"
                 onClick={decreaseQuantity}
