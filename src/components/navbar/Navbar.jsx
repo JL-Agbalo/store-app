@@ -15,10 +15,14 @@ function Navbar() {
 
   return (
     <nav className="bg-white text-black py-3 sticky top-0 shadow-lg z-50">
-      <div className="container mx-auto flex justify-between items-center px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6">
         {/* Logo */}
-        <Link to="/" className="text-2xl font-bold">
-          Store App
+        <Link
+          to="/"
+          className="font-sans text-lg tracking-widest hover:opacity-80 transition-opacity"
+        >
+          <span className="text-gray-400">Pixel</span>
+          <span className="text-black font-medium">Mart</span>
         </Link>
 
         {/* Navigation Icons */}

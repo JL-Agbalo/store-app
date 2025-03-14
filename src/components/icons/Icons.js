@@ -20,6 +20,7 @@ import {
   MdOutlineEmail,
   MdLockOutline,
   MdPersonOutline,
+  MdOutlineChevronRight,
 } from "react-icons/md";
 import {
   IoIosSettings,
@@ -36,7 +37,7 @@ export const Home = {
   Gift: FaGift,
   Clock: FaClock,
   ShoppingCart: FaShoppingCart,
-  RightArrow: BsArrowRight,
+  RightArrow: MdOutlineChevronRight,
 };
 
 export const Navbar = {
