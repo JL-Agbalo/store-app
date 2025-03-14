@@ -1,3 +1,4 @@
+// Icons Module
 import {
   FaTag,
   FaGift,
@@ -29,6 +30,7 @@ import {
 import { IoLogOut, IoBagOutline } from "react-icons/io5";
 import { FaBagShopping } from "react-icons/fa6";
 
+// Icon Groups
 export const Home = {
   Tag: FaTag,
   Gift: FaGift,
@@ -61,6 +63,7 @@ export const Cart = {
   Minus: FaMinus,
   Plus: FaPlus,
   Close: IoMdClose,
+  RightArrow: BsArrowRight,
 };
 
 export const Auth = {

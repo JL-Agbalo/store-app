@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Navbar as Icons } from "../icons/Icons";
 import { Avatar } from "../index";
 import NavDropdown from "./NavDropdown";
-import { CartModal } from "../../components/cart";
+import { CartModal } from "../cart";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);

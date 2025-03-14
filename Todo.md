@@ -12,10 +12,8 @@
 - [x] Create `Home` page
 - [x] Create `Products` page (displays all products)
 - [x] Create `Product Details` page
-- [ ] Create `Cart` page
+- [x] Create `Cart` modal
 - [ ] Create `Checkout` page
-- [ ] Create `Order Summary` page
-- [ ] Create `Order Confirmation` page
 - [ ] Create `User Profile` page
 - [ ] Create `Admin Dashboard`
 - [x] Create `Signup` page

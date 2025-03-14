@@ -65,9 +65,8 @@ const CategoryList = () => {
         {/* Category Grid with Mixed Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {categories.slice(1, 4).map((category, index) => (
-            <Link to="/">
-              {/* <Link to={`/category/${category.id}`} key={category.id}> */}
-
+            <Link to="/" key={category.id}>
+              {/* <Link to={`/category/${category.id}`}> */}
               <div
                 className={`relative ${
                   index === 0 ? "md:col-span-2" : ""
