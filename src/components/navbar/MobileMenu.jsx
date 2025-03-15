@@ -4,12 +4,18 @@ import { Avatar } from "../common";
 import { Navbar as Icons } from "../icons/Icons";
 import { mainNavLinks, userNavLinks } from "../../config/navigation";
 
-function MobileMenu({ isOpen, onClose, isLoggedIn, setIsLoggedIn }) {
+function MobileMenu({
+  isOpen,
+  onClose,
+  isLoggedIn,
+  setIsLoggedIn,
+  setIsCartOpen,
+}) {
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-white z-50 md:hidden">
-      <div className="flex justify-between items-center p-4 shadow-md">
+      <div className="flex justify-between items-center p-2 shadow-md">
         <h2 className="text-xl font-semibold">Menu</h2>
         <button onClick={onClose} className="p-2">
           <Icons.Close className="w-6 h-6" />
@@ -50,16 +56,33 @@ function MobileMenu({ isOpen, onClose, isLoggedIn, setIsLoggedIn }) {
           {isLoggedIn && (
             <>
               <div className="h-px bg-gray-200 my-4"></div>
-              {userNavLinks.map((link) => (
-                <Link
-                  key={link.to}
-                  to={link.to}
-                  className="block py-2 hover:text-gray-600"
-                >
-                  <link.icon className="w-5 h-5 inline mr-3" />
-                  {link.label}
-                </Link>
-              ))}
+              {userNavLinks.map((link) =>
+                link.label === "My Orders" || link.label === "Notifications" ? (
+                  <button
+                    key={link.to}
+                    onClick={() => {
+                      setIsCartOpen(true);
+                      onClose();
+                    }}
+                    className="w-full text-left py-2 hover:text-gray-600 flex items-center justify-between"
+                  >
+                    <div className="flex items-center">
+                      <link.icon className="w-5 h-5 inline mr-3" />
+                      {link.label}
+                    </div>
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                  </button>
+                ) : (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    className="block py-2 hover:text-gray-600"
+                  >
+                    <link.icon className="w-5 h-5 inline mr-3" />
+                    {link.label}
+                  </Link>
+                )
+              )}
               <button
                 onClick={() => {
                   setIsLoggedIn(false);

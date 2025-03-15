@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Navbar as Icons } from "../icons/Icons";
 import { Dropdown } from "../index";
 
-function NavDropdown({ setIsLoggedIn }) {
+function NavDropdown({ setIsLoggedIn, setIsCartOpen }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -26,16 +26,16 @@ function NavDropdown({ setIsLoggedIn }) {
         <Icons.User className="mr-2" />
         My Account
       </Link>
-      <Link
-        to="/#"
-        className="px-4 py-2 hover:bg-gray-200 flex items-center justify-between"
+      <button
+        onClick={() => setIsCartOpen(true)}
+        className="w-full px-4 py-2 hover:bg-gray-200 flex items-center justify-between text-left"
       >
         <div className="flex items-center">
           <Icons.Bag className="mr-2" />
           My Orders
         </div>
         <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-      </Link>
+      </button>
       <Link
         to="/#"
         className="px-4 py-2 hover:bg-gray-200 flex items-center justify-between"

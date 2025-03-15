@@ -57,7 +57,12 @@ function Navbar() {
                   hasNotification={hasNotif}
                 />
               </button>
-              {dropdownOpen && <NavDropdown setIsLoggedIn={setIsLoggedIn} />}
+              {dropdownOpen && (
+                <NavDropdown
+                  setIsLoggedIn={setIsLoggedIn}
+                  setIsCartOpen={setIsCartOpen}
+                />
+              )}
             </div>
           ) : (
             <div className="flex items-center space-x-4">
@@ -78,6 +83,7 @@ function Navbar() {
         onClose={() => setIsMobileMenuOpen(false)}
         isLoggedIn={isLoggedIn}
         setIsLoggedIn={setIsLoggedIn}
+        setIsCartOpen={setIsCartOpen}
       />
 
       <CartModal
