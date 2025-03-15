@@ -8,7 +8,7 @@ import { CartModal } from "../cart";
 import { mainNavLinks } from "../../config/navigation";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
