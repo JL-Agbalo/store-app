@@ -55,7 +55,7 @@ function Promotions() {
               </Link>
               <Link
                 to="/"
-                className="text-black font-normal hover:text-gray-600 transition-colors duration-200"
+                className="text-black font-norma transition-colors duration-200 hover:underline underline-offset-4"
               >
                 All promotions →
               </Link>
