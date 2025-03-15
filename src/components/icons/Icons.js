@@ -13,23 +13,43 @@ import {
   FaFacebook,
   FaGithub,
 } from "react-icons/fa";
-import { BsArrowRight } from "react-icons/bs";
-import { HiMiniHome } from "react-icons/hi2";
+import { BsArrowRight, BsBox } from "react-icons/bs";
+import { HiOutlineUserCircle, HiOutlineShoppingBag } from "react-icons/hi2";
+import { LuMenu } from "react-icons/lu";
+import { PiUserCircleLight } from "react-icons/pi";
+import { CiSettings } from "react-icons/ci";
+import { TbCategoryMinus } from "react-icons/tb";
+
 import {
   MdEmail,
   MdOutlineEmail,
   MdLockOutline,
   MdPersonOutline,
   MdOutlineChevronRight,
+  MdContactSupport,
 } from "react-icons/md";
 import {
   IoIosSettings,
   IoMdHelpCircle,
   IoMdCart,
   IoMdClose,
+  IoIosArrowDown,
+  IoIosNotificationsOutline,
+  IoIosLogOut,
 } from "react-icons/io";
-import { IoLogOut, IoBagOutline } from "react-icons/io5";
+import {
+  IoLogOut,
+  IoBagOutline,
+  IoHelpCircleOutline,
+  IoLogOutOutline,
+  IoNotificationsOutline,
+  IoSettingsOutline,
+  IoCallOutline,
+} from "react-icons/io5";
 import { FaBagShopping } from "react-icons/fa6";
+import { BiCategory } from "react-icons/bi";
+import { FiHelpCircle } from "react-icons/fi";
+import { GoHome } from "react-icons/go";
 
 // Icon Groups
 export const Home = {
@@ -41,14 +61,22 @@ export const Home = {
 };
 
 export const Navbar = {
-  Home: HiMiniHome,
   Message: MdEmail,
-  Notification: FaBell,
+  Notification: IoNotificationsOutline,
   Profile: FaUserCircle,
-  Cart: FaShoppingCart,
-  Setting: IoIosSettings,
-  Help: IoMdHelpCircle,
-  Logout: IoLogOut,
+  Bag: HiOutlineShoppingBag,
+  Setting: IoSettingsOutline,
+  Help: IoHelpCircleOutline,
+  Logout: IoLogOutOutline,
+  ArrowDown: IoIosArrowDown,
+  Menu: LuMenu,
+  Home: GoHome,
+  Category: TbCategoryMinus,
+  Products: BsBox,
+  Contact: IoCallOutline,
+  Close: IoMdClose,
+  User: HiOutlineUserCircle,
+  Bell: IoNotificationsOutline,
 };
 
 export const Product = {
@@ -60,7 +88,7 @@ export const Product = {
 };
 
 export const Cart = {
-  Bag: IoBagOutline,
+  Bag: HiOutlineShoppingBag,
   Minus: FaMinus,
   Plus: FaPlus,
   Close: IoMdClose,

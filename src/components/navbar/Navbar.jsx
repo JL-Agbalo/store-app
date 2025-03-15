@@ -3,20 +3,27 @@ import { Link } from "react-router-dom";
 import { Navbar as Icons } from "../icons/Icons";
 import { Avatar } from "../index";
 import NavDropdown from "./NavDropdown";
+import MobileMenu from "./MobileMenu";
 import { CartModal } from "../cart";
+import { mainNavLinks } from "../../config/navigation";
 
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false); // Add state for cart modal
-  const cartCount = 5;
-  const notificationCount = 3;
-  const messageCount = 0;
+  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const hasNotif = true;
 
   return (
     <nav className="bg-white text-black py-3 sticky top-0 shadow-lg z-50">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 sm:px-6">
-        {/* Logo */}
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
+        <button
+          className="md:hidden"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          <Icons.Menu className="w-6 h-6" />
+        </button>
+
         <Link
           to="/"
           className="font-sans text-lg tracking-widest hover:opacity-80 transition-opacity"
@@ -25,65 +32,54 @@ function Navbar() {
           <span className="text-black font-medium">Mart</span>
         </Link>
 
-        {/* Navigation Icons */}
-        <div className="flex space-x-6 items-center">
+        <div className="hidden md:flex items-center space-x-8">
+          {mainNavLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="hover:text-gray-400 transition"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="hidden md:flex items-center space-x-6">
           {isLoggedIn ? (
-            <>
-              <Link to="/" className="hover:text-gray-400 transition">
-                <Icons.Home className="w-5 h-5" />
-              </Link>
+            <div className="relative">
               <button
-                onClick={() => setIsCartOpen(true)} // Open cart modal on click
-                className="relative hover:text-gray-400 transition"
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="flex items-center hover:text-gray-400 transition rounded-full"
               >
-                <Icons.Cart className="w-5 h-5" />
-                {cartCount > 0 && (
-                  <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
-                    {cartCount}
-                  </div>
-                )}
+                <Avatar
+                  src="https://i.imgur.com/DTfowdu.jpg"
+                  alt="User Avatar"
+                  hasNotification={hasNotif}
+                />
               </button>
-              <Link to="/#" className="relative hover:text-gray-400 transition">
-                <Icons.Message className="w-5 h-5" />
-                {messageCount > 0 && (
-                  <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
-                    {messageCount}
-                  </div>
-                )}
-              </Link>
-              <Link to="/#" className="relative hover:text-gray-400 transition">
-                <Icons.Notification className="w-5 h-5" />
-                {notificationCount > 0 && (
-                  <div className="absolute inline-flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-2 -end-2">
-                    {notificationCount}
-                  </div>
-                )}
-              </Link>
-              <div className="relative">
-                <button
-                  onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="flex items-center hover:text-gray-400 transition rounded-full"
-                >
-                  <Avatar
-                    src="https://i.imgur.com/DTfowdu.jpg"
-                    alt="User Avatar"
-                  />
-                </button>
-                {dropdownOpen && <NavDropdown setIsLoggedIn={setIsLoggedIn} />}
-              </div>
-            </>
+              {dropdownOpen && <NavDropdown setIsLoggedIn={setIsLoggedIn} />}
+            </div>
           ) : (
-            <>
+            <div className="flex items-center space-x-4">
               <Link to="/login" className="hover:text-gray-400 transition">
                 Login
               </Link>
+              <span>|</span>
               <Link to="/signup" className="hover:text-gray-400 transition">
-                Signup
+                Sign Up
               </Link>
-            </>
+            </div>
           )}
         </div>
       </div>
+
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        onClose={() => setIsMobileMenuOpen(false)}
+        isLoggedIn={isLoggedIn}
+        setIsLoggedIn={setIsLoggedIn}
+      />
+
       <CartModal
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}

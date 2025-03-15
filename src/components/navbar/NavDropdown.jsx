@@ -13,16 +13,38 @@ function NavDropdown({ setIsLoggedIn }) {
 
   return (
     <Dropdown>
-      <div className="px-4 py-2 border-b border-gray-200">
-        <span className="block font-semibold">Marisa Santos</span>
+      <div className="p-4 border-b border-gray-200">
+        <div className="flex items-center gap-3">
+          <div className="flex flex-col">
+            <span className="font-medium">Marisa Santos</span>
+            <span className="text-xs text-gray-500">fish@gmail.com</span>
+          </div>
+        </div>
       </div>
+
       <Link to="/#" className="px-4 py-2 hover:bg-gray-200 flex items-center">
-        <Icons.Profile className="mr-2" />
+        <Icons.User className="mr-2" />
         My Account
       </Link>
-      <Link to="/#" className="px-4 py-2 hover:bg-gray-200 flex items-center">
-        <Icons.Cart className="mr-2" />
-        My Orders
+      <Link
+        to="/#"
+        className="px-4 py-2 hover:bg-gray-200 flex items-center justify-between"
+      >
+        <div className="flex items-center">
+          <Icons.Bag className="mr-2" />
+          My Orders
+        </div>
+        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+      </Link>
+      <Link
+        to="/#"
+        className="px-4 py-2 hover:bg-gray-200 flex items-center justify-between"
+      >
+        <div className="flex items-center">
+          <Icons.Bell className="mr-2" />
+          Notifications
+        </div>
+        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
       </Link>
       <Link to="/#" className="px-4 py-2 hover:bg-gray-200 flex items-center">
         <Icons.Setting className="mr-2" />
@@ -32,9 +54,10 @@ function NavDropdown({ setIsLoggedIn }) {
         <Icons.Help className="mr-2" />
         Help
       </Link>
+
       <button
         onClick={handleLogout}
-        className="w-full text-left px-4 py-2 hover:bg-gray-200 flex items-center rounded-b-lg"
+        className="w-full text-left px-4 py-2 hover:bg-gray-200 flex items-center rounded-b-lg "
       >
         <Icons.Logout className="mr-2" />
         Logout

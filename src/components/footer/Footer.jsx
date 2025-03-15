@@ -3,19 +3,13 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-white text-black p-6 ">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm">© 2025 StoreApp. All rights reserved.</p>
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <Link to="/about" className="hover:text-gray-400">
-            About
-          </Link>
-          <Link to="/contact" className="hover:text-gray-400">
-            Contact
-          </Link>
-          <Link to="/privacy" className="hover:text-gray-400">
-            Privacy Policy
-          </Link>
+    <footer className="py-8 px-6 text-sm">
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+        <p>© 2025 PixelMart</p>
+        <div className="space-x-6">
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
+          <Link to="/privacy">Privacy</Link>
         </div>
       </div>
     </footer>
