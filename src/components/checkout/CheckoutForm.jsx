@@ -4,20 +4,24 @@ import ShippingInformation from "./ShippingInformation";
 import PaymentInformation from "./PaymentInformation";
 import PaymentProcessing from "./PaymentProcessing";
 
-function CheckoutForm({ step }) {
-  const user = users[0];
+function CheckoutForm({ step, cartTotal }) {
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [isProcessing, setIsProcessing] = useState(false);
+  const user = users[0]; // This will be moved to context later
 
-  const handlePayment = () => {
-    setIsProcessing(true);
-    setTimeout(() => {
-      setIsProcessing(false);
-    }, 2000);
+  // Group payment-related props
+  const paymentProps = {
+    paymentMethod,
+    setPaymentMethod,
   };
 
   if (isProcessing) {
-    return <PaymentProcessing paymentMethod={paymentMethod} />;
+    return (
+      <PaymentProcessing
+        paymentMethod={paymentMethod}
+        onSuccess={() => setIsProcessing(false)}
+      />
+    );
   }
 
   return (
@@ -25,15 +29,12 @@ function CheckoutForm({ step }) {
       {step === 1 && <ShippingInformation user={user} />}
       {step === 2 && (
         <>
-          <PaymentInformation
-            paymentMethod={paymentMethod}
-            setPaymentMethod={setPaymentMethod}
-          />
+          <PaymentInformation {...paymentProps} />
           <button
-            onClick={handlePayment}
+            onClick={() => setIsProcessing(true)}
             className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300 mt-6"
           >
-            {paymentMethod === "card" ? "Pay $199.99" : "Confirm Order"}
+            {paymentMethod === "card" ? `Pay $${cartTotal}` : "Confirm Order"}
           </button>
         </>
       )}

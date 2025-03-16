@@ -27,13 +27,9 @@ function MobileMenu({
         <div className="space-y-4">
           {isLoggedIn && (
             <UserProfileCard
-              user={user}
-              avatarProps={{
-                src: "https://i.imgur.com/DTfowdu.jpg",
-                alt: "User Avatar",
-                hasNotification: true,
-                className: "w-10 h-10",
-              }}
+              name={user.name}
+              email={user.email}
+              image={user.image}
             />
           )}
 

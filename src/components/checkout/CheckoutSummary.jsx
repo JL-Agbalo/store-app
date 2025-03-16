@@ -15,7 +15,7 @@ function CheckoutSummary({ cartItems }) {
         <h3 className="font-semibold text-lg">Order Summary</h3>
         <div className="space-y-4 max-h-[200px] overflow-y-auto pr-2">
           {cartItems.map((item) => (
-            <div key={item.id} className="flex items-start gap-4 group">
+            <div key={item.id} className="flex items-center gap-4 group">
               <img
                 src={item.images[0]}
                 alt={item.title}

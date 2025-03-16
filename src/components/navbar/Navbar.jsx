@@ -13,8 +13,27 @@ function Navbar() {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const hasNotif = true;
-  const user = users[0];
+  const user = users[0]; // This will be moved to context later
+
+  // Group auth-related props
+  const authProps = {
+    isLoggedIn,
+    setIsLoggedIn,
+    user,
+  };
+
+  // Group modal-related props
+  const modalProps = {
+    isOpen: isCartOpen,
+    onClose: () => setIsCartOpen(false),
+    setIsCartOpen,
+  };
+
+  // Group dropdown-related props
+  const dropdownProps = {
+    setDropdownOpen,
+    setIsCartOpen,
+  };
 
   return (
     <nav className="bg-white text-black py-3 sticky top-0 shadow-lg z-50">
@@ -56,16 +75,12 @@ function Navbar() {
                 <Avatar
                   src={user.image}
                   alt="User Avatar"
-                  hasNotification={hasNotif}
+                  hasNotification={true}
                   className="w-8 h-8"
                 />
               </button>
               {dropdownOpen && (
-                <NavDropdown
-                  user={user} // Todo: hide the other data and use the useContext
-                  setIsLoggedIn={setIsLoggedIn}
-                  setIsCartOpen={setIsCartOpen}
-                />
+                <NavDropdown {...authProps} {...dropdownProps} />
               )}
             </div>
           ) : (
@@ -83,19 +98,13 @@ function Navbar() {
       </div>
 
       <MobileMenu
-        user={user} // Todo: hide the other data and use the useContext
+        {...authProps}
+        {...modalProps}
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
-        isLoggedIn={isLoggedIn}
-        setIsLoggedIn={setIsLoggedIn}
-        setIsCartOpen={setIsCartOpen}
       />
 
-      <CartModal
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cartItems={[]}
-      />
+      <CartModal {...modalProps} />
     </nav>
   );
 }

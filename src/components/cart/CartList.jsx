@@ -1,5 +1,5 @@
 import React from "react";
-import { CartItem } from "../cart";
+import { CartItem } from "./index";
 import { products } from "../../data/appStoreData";
 
 function CartList() {

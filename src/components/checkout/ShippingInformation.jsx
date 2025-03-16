@@ -1,19 +1,15 @@
 import React from "react";
+import { UserProfileCard } from "../common";
 
 function ShippingInformation({ user }) {
   return (
     <div className="space-y-6">
-      <div className="flex items-center space-x-4 mb-6">
-        <img
-          src={user.image}
-          alt={user.name}
-          className="w-16 h-16 rounded-full"
-        />
-        <div>
-          <h3 className="text-xl font-semibold">{user.name}</h3>
-          <p className="text-gray-600">{user.email}</p>
-        </div>
-      </div>
+      <UserProfileCard
+        name={user.name}
+        email={user.email}
+        image={user.image}
+        className="w-16 h-16"
+      />
       <h3 className="text-xl font-semibold">Shipping Information</h3>
       <div className="grid grid-cols-2 gap-4">
         {/* Name Fields */}

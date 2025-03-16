@@ -5,13 +5,14 @@ import { products } from "../../data/appStoreData";
 function Checkout() {
   const [step, setStep] = useState(1);
 
-  // Static cart data
-  const cartItems = products.slice(0, 3).map((product) => ({
-    ...product,
-    quantity: 1,
-  }));
-
-  const cartTotal = 199.99; // Static total for demo
+  // Group checkout data props
+  const checkoutData = {
+    cartItems: products.slice(0, 3).map((product) => ({
+      ...product,
+      quantity: 1,
+    })),
+    cartTotal: 209.98,
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
@@ -41,21 +42,17 @@ function Checkout() {
       {/* Main Content */}
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="lg:w-2/3">
-          <CheckoutForm
-            step={step}
-            cartItems={cartItems}
-            cartTotal={cartTotal}
-          />
+          <CheckoutForm step={step} {...checkoutData} />
         </div>
         <div className="lg:w-1/3">
           <div className="sticky top-24">
-            <CheckoutSummary cartItems={cartItems} />
+            <CheckoutSummary {...checkoutData} />
             <div className="mt-6 space-y-3">
               {step === 1 ? (
                 <button
                   onClick={() => setStep(2)}
                   className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300 font-medium"
-                  disabled={cartItems.length === 0}
+                  disabled={checkoutData.cartItems.length === 0}
                 >
                   Continue to Payment
                 </button>

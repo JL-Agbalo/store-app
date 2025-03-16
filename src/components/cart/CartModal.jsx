@@ -4,11 +4,11 @@ import { Cart as Icons } from "../icons/Icons";
 import CartList from "./CartList";
 import CartTotal from "./CartTotal";
 
-function CartModal({ isOpen, onClose }) {
+function CartModal({ isOpen, onClose, setIsCartOpen }) {
   const navigate = useNavigate();
 
   const handleCheckout = () => {
-    onClose();
+    setIsCartOpen(false); // Close modal when navigating
     navigate("/checkout");
   };
 
