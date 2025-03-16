@@ -4,6 +4,7 @@ import { Home } from "../pages/home";
 import { Products, Product } from "../pages/product";
 import { Login, Signup } from "../pages/auth";
 import { Profile } from "../pages/profile";
+import { Checkout } from "../pages/checkout";
 
 const AppRoutes = () => {
   return (
@@ -34,6 +35,14 @@ const AppRoutes = () => {
         element={
           <MainLayout>
             <Product />
+          </MainLayout>
+        }
+      />
+      <Route
+        path="/checkout"
+        element={
+          <MainLayout>
+            <Checkout />
           </MainLayout>
         }
       />

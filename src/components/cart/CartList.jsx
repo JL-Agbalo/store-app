@@ -3,7 +3,7 @@ import { CartItem } from "../cart";
 import { products } from "../../data/appStoreData";
 
 function CartList() {
-  const cartItems = products.slice(0, 3).map((product) => ({
+  const cartItems = products.slice(0, 10).map((product) => ({
     ...product,
     quantity: 1,
   }));
