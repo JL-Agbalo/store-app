@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ProductCard } from "../../components/product";
 // import { getProducts } from "../service/platziApi";
-import { products as getProductsData } from "../../data/ProductData";
+import { products as getProductsData } from "../../data/appStoreData";
 
 function ProductList() {
   const [products, setProducts] = useState([]);

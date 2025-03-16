@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 // import { getProducts } from "../../service/platziApi";
-import { products as getProductsData } from "../../data/ProductData";
+import { products as getProductsData } from "../../data/appStoreData";
 
 import {
   HeroBanner,

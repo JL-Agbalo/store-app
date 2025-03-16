@@ -6,6 +6,7 @@ import NavDropdown from "./NavDropdown";
 import MobileMenu from "./MobileMenu";
 import { CartModal } from "../cart";
 import { mainNavLinks } from "../../config/navigation";
+import { users } from "../../data/appStoreData";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -13,6 +14,7 @@ function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const hasNotif = true;
+  const user = users[0];
 
   return (
     <nav className="bg-white text-black py-3 sticky top-0 shadow-lg z-50">
@@ -49,16 +51,18 @@ function Navbar() {
             <div className="relative">
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
-                className="flex items-center hover:text-gray-400 transition rounded-full"
+                className="flex items-center hover:text-gray-400 transition rounded-full "
               >
                 <Avatar
-                  src="https://i.imgur.com/DTfowdu.jpg"
+                  src={user.image}
                   alt="User Avatar"
                   hasNotification={hasNotif}
+                  className="w-8 h-8"
                 />
               </button>
               {dropdownOpen && (
                 <NavDropdown
+                  user={user} // Todo: hide the other data and use the useContext
                   setIsLoggedIn={setIsLoggedIn}
                   setIsCartOpen={setIsCartOpen}
                 />
@@ -79,6 +83,7 @@ function Navbar() {
       </div>
 
       <MobileMenu
+        user={user} // Todo: hide the other data and use the useContext
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}
         isLoggedIn={isLoggedIn}

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Navbar as Icons } from "../icons/Icons";
 import { Dropdown } from "../index";
 
-function NavDropdown({ setIsLoggedIn, setIsCartOpen }) {
+function NavDropdown({ setIsLoggedIn, setIsCartOpen, user }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -16,8 +16,8 @@ function NavDropdown({ setIsLoggedIn, setIsCartOpen }) {
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center gap-3">
           <div className="flex flex-col">
-            <span className="font-medium">Marisa Santos</span>
-            <span className="text-xs text-gray-500">fish@gmail.com</span>
+            <span className="font-medium">{user.name}</span>
+            <span className="text-xs text-gray-500">{user.email}</span>
           </div>
         </div>
       </div>

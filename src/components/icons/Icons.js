@@ -11,6 +11,8 @@ import {
 } from "react-icons/fa";
 import { HiOutlineUserCircle, HiOutlineShoppingBag } from "react-icons/hi2";
 import { LuMenu } from "react-icons/lu";
+import { RiBox3Line } from "react-icons/ri";
+
 import {
   MdOutlineEmail,
   MdLockOutline,
@@ -25,7 +27,6 @@ import {
   IoLogOutOutline,
 } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
-import { BsBox } from "react-icons/bs";
 import { TbCategoryMinus } from "react-icons/tb";
 
 // Icon Groups
@@ -40,7 +41,7 @@ export const Navbar = {
   Menu: LuMenu,
   Home: GoHome,
   Category: TbCategoryMinus,
-  Products: BsBox,
+  Products: RiBox3Line,
   Contact: IoCallOutline,
   Close: IoMdClose,
   User: HiOutlineUserCircle,

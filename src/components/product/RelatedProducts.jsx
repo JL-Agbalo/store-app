@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductDetails";
-import { getProductsByCategory } from "../../data/ProductData";
+import { getProductsByCategory } from "../../data/appStoreData";
 
 function RelatedProduct({ categoryId }) {
   const [relatedProducts, setrelatedProducts] = useState([]);

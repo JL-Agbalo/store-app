@@ -7,7 +7,7 @@ const MainLayout = ({ children }) => {
       {/* Navbar */}
       <Navbar />
       {/* Page Content */}
-      <main className="flex-grow">{children}</main>
+      <main className="flex-grow pb-20 md:pb-24">{children}</main>
       {/* Footer */}
       <Footer />
     </div>

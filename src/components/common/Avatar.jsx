@@ -1,11 +1,15 @@
 import React from "react";
 
-function Avatar({ src, alt, hasNotification }) {
+function Avatar({ src, alt, hasNotification, className = "" }) {
   return (
     <div className="relative">
-      <img src={src} alt={alt} className="w-6 h-6 rounded-full object-cover" />
+      <img
+        src={src}
+        alt={alt}
+        className={`rounded-full object-cover ${className}`}
+      />
       {hasNotification && (
-        <div className="absolute inline-flex items-center justify-center w-3 h-3 text-xs font-bold text-white bg-red-500 border-2 border-white rounded-full -top-1 -end-1"></div>
+        <span className="absolute top-0 right-0 block w-3 h-3 bg-red-500 rounded-full border-2 border-white" />
       )}
     </div>
   );

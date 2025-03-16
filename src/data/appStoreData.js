@@ -612,15 +612,49 @@ export const getProductsByCategory = (categoryId) => {
 export const users = [
   {
     id: 1,
-    email: "user1@example.com",
-    password: "password1",
+    name: "Fish Admin",
+    email: "admin@example.com",
+    password: "securepassword",
+    role: "admin",
+    image: "https://randomuser.me/api/portraits/men/1.jpg",
+    address: {
+      street: "123 Admin St",
+      city: "Admin City",
+      state: "Admin State",
+      zip: "10001",
+      country: "Admin Country",
+    },
   },
   {
     id: 2,
-    email: "user2@example.com",
-    password: "password2",
+    name: "John Doe",
+    email: "johndoe@example.com",
+    password: "userpassword",
+    role: "user",
+    image: "https://randomuser.me/api/portraits/men/2.jpg",
+    address: {
+      street: "456 User Rd",
+      city: "User City",
+      state: "User State",
+      zip: "20002",
+      country: "User Country",
+    },
   },
-  // ...more users...
+  {
+    id: 3,
+    name: "Jane Smith",
+    email: "janesmith@example.com",
+    password: "userpassword",
+    role: "user",
+    image: "https://randomuser.me/api/portraits/women/3.jpg",
+    address: {
+      street: "789 Shopper Ln",
+      city: "Shopper City",
+      state: "Shopper State",
+      zip: "30003",
+      country: "Shopper Country",
+    },
+  },
 ];
 
 export const categories = [

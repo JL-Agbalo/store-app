@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Avatar } from "../common";
+import UserProfileCard from "../common/UserProfileCard";
 import { Navbar as Icons } from "../icons/Icons";
 import { mainNavLinks, userNavLinks } from "../../config/navigation";
 
@@ -10,6 +10,7 @@ function MobileMenu({
   isLoggedIn,
   setIsLoggedIn,
   setIsCartOpen,
+  user,
 }) {
   if (!isOpen) return null;
 
@@ -25,18 +26,15 @@ function MobileMenu({
       <div className="p-4">
         <div className="space-y-4">
           {isLoggedIn && (
-            <div className="flex items-center gap-4 mb-6">
-              <Avatar
-                src="https://i.imgur.com/DTfowdu.jpg"
-                alt="User Avatar"
-                hasNotification={true}
-                className="w-14 h-14"
-              />
-              <div className="flex flex-col">
-                <span className="font-medium text-lg">Marisa Santos</span>
-                <span className="text-sm text-gray-500">fish@gmail.com</span>
-              </div>
-            </div>
+            <UserProfileCard
+              user={user}
+              avatarProps={{
+                src: "https://i.imgur.com/DTfowdu.jpg",
+                alt: "User Avatar",
+                hasNotification: true,
+                className: "w-10 h-10",
+              }}
+            />
           )}
 
           {/* Main Navigation Links */}
