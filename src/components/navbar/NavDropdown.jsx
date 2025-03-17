@@ -27,7 +27,10 @@ function NavDropdown({ setIsLoggedIn, setIsCartOpen, setDropdownOpen, user }) {
         </div>
       </div>
 
-      <Link to="/#" className="px-4 py-2 hover:bg-gray-200 flex items-center">
+      <Link
+        to="/profile"
+        className="px-4 py-2 hover:bg-gray-200 flex items-center"
+      >
         <Icons.User className="mr-2" />
         My Account
       </Link>

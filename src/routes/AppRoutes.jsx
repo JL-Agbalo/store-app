@@ -3,7 +3,7 @@ import MainLayout from "../components/layout/MainLayout";
 import { Home } from "../pages/home";
 import { Products, Product } from "../pages/product";
 import { Login, Signup } from "../pages/auth";
-import { Profile } from "../pages/profile";
+import { UserProfile } from "../pages/user-profile";
 import { Checkout } from "../pages/checkout";
 
 const AppRoutes = () => {
@@ -46,14 +46,14 @@ const AppRoutes = () => {
           </MainLayout>
         }
       />
-      {/* <Route
+      <Route
         path="/profile"
         element={
           <MainLayout>
-            <Profile />
+            <UserProfile />
           </MainLayout>
         }
-      /> */}
+      />
     </Routes>
   );
 };
