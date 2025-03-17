@@ -25,6 +25,7 @@ import {
   IoSettingsOutline,
   IoHelpCircleOutline,
   IoLogOutOutline,
+  IoChevronDownOutline,
 } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
 import { TbCategoryMinus } from "react-icons/tb";
@@ -72,4 +73,8 @@ export const Auth = {
   Google: FaGoogle,
   Facebook: FaFacebook,
   Github: FaGithub,
+};
+
+export const UserProfile = {
+  ArrowDown: IoChevronDownOutline,
 };

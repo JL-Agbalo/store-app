@@ -9,7 +9,7 @@ export const mainNavLinks = [
 
 // User-related navigation links (secondary navigation)
 export const userNavLinks = [
-  { to: "/account", label: "My Account", icon: Icons.User },
+  { to: "/profile", label: "My Account", icon: Icons.User },
   { to: "/orders", label: "My Orders", icon: Icons.Bag, hasNotification: true },
   {
     to: "/notifications",

@@ -20,7 +20,7 @@ function RelatedProduct({ categoryId }) {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-4">Related Products</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         {relatedProducts.slice(0, 8).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
