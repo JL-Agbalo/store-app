@@ -1,15 +1,23 @@
-import ProfileSection from "../sections/user/profile/ProfileSection";
-import BanksCardsSection from "../sections/user/payment/PaymentSection";
-import ChangePasswordSection from "../sections/user/password/PasswordSection";
-import AddressesSection from "../sections/user/addresses/AddressesSection";
-import OrdersSection from "../sections/user/orders/OrdersSection";
-import NotificationsSection from "../sections/user/notifications/NotificationsSection";
+import {
+  AccountSection,
+  ProfileSection,
+  BanksCardsSection,
+  ChangePasswordSection,
+  AddressesSection,
+  OrdersSection,
+  NotificationsSection,
+} from "../components/user";
 
 export const sections = {
   profile: {
     id: "profile",
     label: "Profile",
     component: ProfileSection,
+  },
+  account: {
+    id: "account",
+    label: "Account",
+    component: AccountSection,
   },
   payment: {
     id: "payment",

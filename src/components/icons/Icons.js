@@ -77,4 +77,7 @@ export const Auth = {
 
 export const UserProfile = {
   ArrowDown: IoChevronDownOutline,
+  Google: FaGoogle,
+  Facebook: FaFacebook,
+  Github: FaGithub,
 };

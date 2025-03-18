@@ -1,50 +1,10 @@
 import React, { useState } from "react";
 import { UserProfile as Icons } from "../../components/icons/Icons";
-import {
-  Sidebar,
-  ProfileSection,
-  BanksCardsSection,
-  ChangePasswordSection,
-  AddressesSection,
-  OrdersSection,
-  NotificationsSection,
-} from "../../components/user";
-
-const sections = {
-  profile: {
-    id: "profile",
-    label: "Profile",
-    component: ProfileSection,
-  },
-  payment: {
-    id: "payment",
-    label: "Cards & Bank Accounts",
-    component: BanksCardsSection,
-  },
-  password: {
-    id: "password",
-    label: "Change Password",
-    component: ChangePasswordSection,
-  },
-  addresses: {
-    id: "addresses",
-    label: "Addresses",
-    component: AddressesSection,
-  },
-  orders: {
-    id: "orders",
-    label: "Orders",
-    component: OrdersSection,
-  },
-  notifications: {
-    id: "notifications",
-    label: "Notifications",
-    component: NotificationsSection,
-  },
-};
+import { Sidebar } from "../../components/user";
+import { sections } from "../../config/userProfileSections";
 
 function UserProfile() {
-  const [activeSection, setActiveSection] = useState("profile");
+  const [activeSection, setActiveSection] = useState(Object.keys(sections)[0]);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const ActiveComponent = sections[activeSection].component;
 
