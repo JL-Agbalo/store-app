@@ -4,7 +4,7 @@ import { Sidebar } from "../../components/user";
 import { sections } from "../../config/userProfileSections";
 
 function UserProfile() {
-  const [activeSection, setActiveSection] = useState(Object.keys(sections)[0]);
+  const [activeSection, setActiveSection] = useState("profile");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const ActiveComponent = sections[activeSection].component;
 
@@ -18,13 +18,12 @@ function UserProfile() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="container max-w-7xl mx-auto py-8 px-4">
-        {/* Mobile Menu Button */}
+    <main className="min-h-screen bg-gray-100 py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:hidden mb-4">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="flex items-center justify-between w-full p-4 bg-white rounded-lg shadow-sm"
+            className="w-full p-4 bg-white rounded-lg shadow-md flex items-center justify-between"
           >
             <span className="font-medium">{sections[activeSection].label}</span>
             <Icons.ArrowDown
@@ -35,23 +34,21 @@ function UserProfile() {
           </button>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-8">
-          {/* Sidebar - Hidden on mobile unless menu is open */}
-          <div
-            className={`${
-              isMobileMenuOpen ? "block" : "hidden"
-            } lg:block lg:w-64 z-10`}
+        <div className="flex flex-col lg:flex-row gap-6">
+          <aside
+            className={` ${isMobileMenuOpen ? "block" : "hidden"} lg:block`}
           >
             <Sidebar {...sidebarProps} />
-          </div>
+          </aside>
 
-          {/* Main Content */}
-          <div className="flex-1 bg-white rounded-lg shadow-sm">
-            <ActiveComponent />
+          <div className="flex-1">
+            <div className="bg-white rounded-lg shadow-md p-3">
+              <ActiveComponent />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
 

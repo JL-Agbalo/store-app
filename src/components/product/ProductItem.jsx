@@ -29,7 +29,7 @@ function ProductItem({ product }) {
                 alt={`${product.title} ${index + 1}`}
                 className={`w-16 h-16 object-cover border-2 cursor-pointer transition rounded-lg ${
                   selectedImage === image
-                    ? "border-black shadow-lg"
+                    ? "border-black shadow-md"
                     : "border-gray-300 hover:border-gray-500"
                 }`}
                 onClick={() => setSelectedImage(image)}
@@ -53,7 +53,7 @@ function ProductItem({ product }) {
                 <img
                   src={product.category.image}
                   alt={product.category.name}
-                  className="w-8 h-8 rounded-full border border-gray-300 shadow-sm"
+                  className="w-8 h-8 rounded-full border border-gray-300 shadow-md"
                 />
                 <span className="text-sm text-gray-700">
                   {product.category.name}

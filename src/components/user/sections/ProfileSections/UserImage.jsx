@@ -11,10 +11,7 @@ function UserImage({ user }) {
       <div className="space-y-2">
         <div className="flex gap-2">
           <button className="px-2 py-1 text-sm border border-black text-black rounded-lg hover:bg-black hover:text-white transition-colors">
-            Change Photo
-          </button>
-          <button className="px-2 py-1 text-sm text-red-600 border border-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-colors">
-            Remove
+            Change Avatar
           </button>
         </div>
         <p className="text-xs text-gray-500">

@@ -72,7 +72,7 @@ function Login() {
           <img
             src="https://images.unsplash.com/photo-1601987077615-2d3cdbb1d1b1"
             alt="Shopping Experience"
-            className="rounded-lg shadow-lg border-2 border-white"
+            className="rounded-lg shadow-md border-2 border-white"
           />
         </div>
       </div>

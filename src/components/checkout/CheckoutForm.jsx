@@ -32,7 +32,7 @@ function CheckoutForm({ step, cartTotal }) {
           <PaymentInformation {...paymentProps} />
           <button
             onClick={() => setIsProcessing(true)}
-            className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300 mt-6"
+            className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-900 transition duration-300 mt-6"
           >
             {paymentMethod === "card" ? `Pay $${cartTotal}` : "Confirm Order"}
           </button>

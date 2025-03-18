@@ -13,7 +13,7 @@ function Sidebar({
   };
 
   return (
-    <div className="w-full lg:w-64 bg-white rounded-lg shadow-sm">
+    <div className="w-full lg:w-64 bg-white rounded-lg shadow-md">
       <nav className="p-4">
         <ul className="space-y-2">
           {Object.values(sections).map(({ id, label }) => (

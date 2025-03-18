@@ -10,7 +10,7 @@ function PaymentInformation({ paymentMethod, setPaymentMethod }) {
           Select Payment Method
         </label>
         <div className="flex gap-4">
-          <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:border-black transition-colors">
+          <label className="flex items-center p-2 border rounded-lg cursor-pointer hover:border-black transition-colors">
             <input
               type="radio"
               name="paymentMethod"
@@ -21,7 +21,7 @@ function PaymentInformation({ paymentMethod, setPaymentMethod }) {
             />
             <span>Card Payment</span>
           </label>
-          <label className="flex items-center p-4 border rounded-lg cursor-pointer hover:border-black transition-colors">
+          <label className="flex items-center p-2 border rounded-lg cursor-pointer hover:border-black transition-colors">
             <input
               type="radio"
               name="paymentMethod"

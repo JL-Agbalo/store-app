@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 function UserInformation({ user }) {
   const [formData, setFormData] = useState({
-    name: user.name,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    mobile: user.mobile,
     email: user.email,
     street: user.address.street,
     city: user.address.city,
@@ -34,8 +36,10 @@ function UserInformation({ user }) {
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <InputField label="Full Name" name="name" required />
+        <InputField label="First Name" name="firstName" required />
+        <InputField label="Last Name" name="lastName" required />
         <InputField label="Email" name="email" type="email" required />
+        <InputField label="Mobile Number" name="mobile" required />
       </div>
 
       <div className="space-y-4">

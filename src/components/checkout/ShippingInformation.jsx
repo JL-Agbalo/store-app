@@ -1,11 +1,13 @@
 import React from "react";
 import { UserProfileCard } from "../common";
+import { Link } from "react-router-dom";
 
 function ShippingInformation({ user }) {
   return (
     <div className="space-y-6">
       <UserProfileCard
-        name={user.name}
+        firstName={user.firstName}
+        lastName={user.lastName}
         email={user.email}
         image={user.image}
         className="w-16 h-16"
@@ -14,74 +16,65 @@ function ShippingInformation({ user }) {
       <div className="grid grid-cols-2 gap-4">
         {/* Name Fields */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <span className="block text-sm font-medium text-gray-700 mb-1">
             First Name
-          </label>
-          <input
-            type="text"
-            className="w-full p-2 border rounded-lg"
-            defaultValue={user.name.split(" ")[0]}
-            readOnly
-          />
+          </span>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.firstName}</p>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <span className="block text-sm font-medium text-gray-700 mb-1">
             Last Name
-          </label>
-          <input
-            type="text"
-            className="w-full p-2 border rounded-lg"
-            defaultValue={user.name.split(" ")[1]}
-            readOnly
-          />
+          </span>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.lastName}</p>
         </div>
       </div>
       {/* Contact and Address Fields */}
-      <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Email
-        </label>
-        <input
-          type="email"
-          className="w-full p-2 border rounded-lg"
-          defaultValue={user.email}
-          readOnly
-        />
+      <div className="grid grid-cols-2 gap-4">
+        {/* Name Fields */}
+        <div>
+          <span className="block text-sm font-medium text-gray-700 mb-1">
+            Email
+          </span>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.email}</p>
+        </div>
+        <div>
+          <span className="block text-sm font-medium text-gray-700 mb-1">
+            Mobile Number
+          </span>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.mobile}</p>
+        </div>
       </div>
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <span className="block text-sm font-medium text-gray-700 mb-1">
           Address
-        </label>
-        <input
-          type="text"
-          className="w-full p-2 border rounded-lg"
-          defaultValue={user.address.street}
-          readOnly
-        />
+        </span>
+        <p className="w-full p-2 bg-gray-50 rounded-lg">
+          {user.address.street}
+        </p>
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <span className="block text-sm font-medium text-gray-700 mb-1">
             City
-          </label>
-          <input
-            type="text"
-            className="w-full p-2 border rounded-lg"
-            defaultValue={user.address.city}
-            readOnly
-          />
+          </span>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">
+            {user.address.city}
+          </p>
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <span className="block text-sm font-medium text-gray-700 mb-1">
             Postal Code
-          </label>
-          <input
-            type="text"
-            className="w-full p-2 border rounded-lg"
-            defaultValue={user.address.zip}
-            readOnly
-          />
+          </span>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.address.zip}</p>
         </div>
+      </div>
+      <div className="flex justify-end">
+        <Link
+          to="/profile"
+          className="px-3 py-2 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors"
+        >
+          Edit Profile
+        </Link>
       </div>
     </div>
   );

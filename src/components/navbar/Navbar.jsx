@@ -36,7 +36,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white text-black py-3 sticky top-0 shadow-lg z-50">
+    <nav className="bg-white text-black py-3 sticky top-0 shadow-md z-50">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6">
         <button
           className="md:hidden"

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function Promotions() {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto bg-gray-100">
       <section className="py-30">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="col-span-1 lg:col-span-7 p-8 bg-white rounded-lg flex flex-col justify-between">

@@ -2,7 +2,6 @@ import {
   AccountSection,
   ProfileSection,
   BanksCardsSection,
-  ChangePasswordSection,
   AddressesSection,
   OrdersSection,
   NotificationsSection,
@@ -14,20 +13,15 @@ export const sections = {
     label: "Profile",
     component: ProfileSection,
   },
-  account: {
-    id: "account",
-    label: "Account",
-    component: AccountSection,
-  },
   payment: {
     id: "payment",
     label: "Cards & Bank Accounts",
     component: BanksCardsSection,
   },
-  password: {
-    id: "password",
-    label: "Change Password",
-    component: ChangePasswordSection,
+  account: {
+    id: "account",
+    label: "Account",
+    component: AccountSection,
   },
   addresses: {
     id: "addresses",
