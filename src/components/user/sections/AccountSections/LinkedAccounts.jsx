@@ -17,10 +17,16 @@ function LinkedAccounts() {
       console.log(`Connecting ${account.name}`);
     }
   };
-
+  // TODO WHEN IN MOBILE USE ICON ONLY
   return (
-    <div className="space-y-4">
-      <h3 className="text-base font-medium text-gray-800">Linked Accounts</h3>
+    <div className="my-4">
+      <h3 className="text-base font-medium text-gray-800 mb-4">
+        Linked Accounts
+      </h3>
+      <p className="text-sm text-gray-600 mb-4">
+        Connect your accounts to enable quick sign-in and sync your data across
+        different platforms.
+      </p>
       <div className="flex gap-4">
         {accounts.map((account) => (
           <button

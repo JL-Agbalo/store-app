@@ -25,7 +25,7 @@ function HeroBanner() {
 
           <Link
             to="/products"
-            className="group inline-flex items-center px-8 py-3 text-sm tracking-wide border border-black text-black hover:bg-black hover:text-white transition-all duration-300"
+            className="group inline-flex items-center px-8 py-3 text-sm tracking-wide border rounded-lg border-black text-black hover:bg-black hover:text-white transition-all duration-300"
           >
             <span>Explore Collection</span>
             <Icons.RightArrow className="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" />

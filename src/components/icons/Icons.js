@@ -8,15 +8,18 @@ import {
   FaGoogle,
   FaFacebook,
   FaGithub,
+  FaRegEyeSlash,
 } from "react-icons/fa";
 import { HiOutlineUserCircle, HiOutlineShoppingBag } from "react-icons/hi2";
 import { LuMenu } from "react-icons/lu";
 import { RiBox3Line } from "react-icons/ri";
+import { CiLock } from "react-icons/ci";
 
 import {
   MdOutlineEmail,
   MdLockOutline,
   MdOutlineChevronRight,
+  MdOutlineVerified,
 } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import {
@@ -26,9 +29,11 @@ import {
   IoHelpCircleOutline,
   IoLogOutOutline,
   IoChevronDownOutline,
+  IoCheckmarkCircle,
 } from "react-icons/io5";
 import { GoHome } from "react-icons/go";
 import { TbCategoryMinus } from "react-icons/tb";
+import { LuTriangleAlert } from "react-icons/lu";
 
 // Icon Groups
 export const Home = {
@@ -80,4 +85,8 @@ export const UserProfile = {
   Google: FaGoogle,
   Facebook: FaFacebook,
   Github: FaGithub,
+  Lock: CiLock,
+  Verified: IoCheckmarkCircle,
+  Eye: FaRegEyeSlash,
+  Alert: LuTriangleAlert,
 };

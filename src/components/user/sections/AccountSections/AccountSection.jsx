@@ -1,10 +1,30 @@
 import React from "react";
+import {
+  UpdateContactInfo,
+  LinkedAccounts,
+  ChangePassword,
+  DeleteAccount,
+} from ".";
+import { users } from "../../../../data/appStoreData";
 
 function AccountSection() {
+  const user = users[0];
+
   return (
-    <section id="payment" className="p-6">
-      <h2 className="text-2xl font-semibold mb-6">Account Section</h2>
-      {/* Add Email and Verified */}
+    <section className="p-5">
+      <h2 className="text-xl font-semibold mb-4">Account Information</h2>
+      <div>
+        <div className="mb-8">
+          <UpdateContactInfo user={user} />
+        </div>
+        <div className="mb-8">
+          <ChangePassword />
+        </div>
+        <div className="mb-8">
+          <LinkedAccounts />
+        </div>
+        <DeleteAccount />
+      </div>
     </section>
   );
 }

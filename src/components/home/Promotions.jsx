@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Promotions() {
   return (
     <div className="container mx-auto bg-gray-100">
-      <section className="py-30">
+      <section className="py-15">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
           <div className="col-span-1 lg:col-span-7 p-8 bg-white rounded-lg flex flex-col justify-between">
             {/* Header */}
@@ -49,13 +49,13 @@ function Promotions() {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <Link
                 to="/products"
-                className="flex items-center py-2 px-4 w-full sm:w-auto justify-center border border-black text-black font-normal hover:bg-black hover:text-white transition-colors duration-200"
+                className="flex items-center py-2 px-4 w-full sm:w-auto justify-center border rounded-lg border-black text-black font-normal hover:bg-black hover:text-white transition-colors duration-200"
               >
                 Shop Now
               </Link>
               <Link
                 to="/"
-                className="text-black font-norma transition-colors duration-200 hover:underline underline-offset-4"
+                className="text-black font-norma transition-colors duration-200 hover:underline underline-offset-4 "
               >
                 All promotions →
               </Link>

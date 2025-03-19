@@ -13,15 +13,15 @@ export const sections = {
     label: "Profile",
     component: ProfileSection,
   },
-  payment: {
-    id: "payment",
-    label: "Cards & Bank Accounts",
-    component: BanksCardsSection,
-  },
   account: {
     id: "account",
     label: "Account",
     component: AccountSection,
+  },
+  payment: {
+    id: "payment",
+    label: "Cards & Bank Accounts",
+    component: BanksCardsSection,
   },
   addresses: {
     id: "addresses",

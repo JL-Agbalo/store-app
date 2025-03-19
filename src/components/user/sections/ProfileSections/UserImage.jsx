@@ -8,8 +8,8 @@ function UserImage({ user }) {
         alt={user.name}
         className="w-20 h-20 rounded-full object-cover border-2 border-gray-200"
       />
-      <div className="space-y-2">
-        <div className="flex gap-2">
+      <div className="flex flex-col">
+        <div className="flex gap-2 mb-2">
           <button className="px-2 py-1 text-sm border border-black text-black rounded-lg hover:bg-black hover:text-white transition-colors">
             Change Avatar
           </button>
