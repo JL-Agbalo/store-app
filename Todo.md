@@ -13,8 +13,8 @@
 - [x] Create `Products` page (displays all products)
 - [x] Create `Product Details` page
 - [x] Create `Cart` modal
-- [ ] Create `Checkout` page
-- [ ] Create `User Profile` page
+- [x] Create `Checkout` page
+- [x] Create `User Profile` page
 - [ ] Create `Admin Dashboard`
 - [x] Create `Signup` page
 - [x] Create `Login` page
@@ -72,7 +72,7 @@
 
 ## 9️⃣ Checkout & Orders
 
-- [ ] Implement `Checkout` page
+- [x] Implement `Checkout` page
 - [ ] Create `Order Summary` component
 - [ ] Implement `Order Confirmation` page
 

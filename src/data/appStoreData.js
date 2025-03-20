@@ -943,3 +943,189 @@ export const cart = [
     updatedAt: "2025-03-12T19:00:00.000Z",
   },
 ];
+
+export const orderHistory = [
+  {
+    id: 1,
+    userId: 2,
+    orderNumber: "ORD-23589",
+    items: [
+      {
+        productId: 1,
+        quantity: 2,
+        price: 29.99,
+      },
+      {
+        productId: 5,
+        quantity: 1,
+        price: 89.95,
+      },
+    ],
+    total: 149.93,
+    subtotal: 149.93,
+    tax: 12.74,
+    shippingCost: 5.99,
+    discount: 15.0,
+    finalTotal: 153.66,
+    paymentMethod: {
+      type: "creditCard",
+      details: {
+        cardType: "Visa",
+        lastFour: "4242",
+        expiryDate: "05/27",
+      },
+    },
+    shipping: {
+      address: "456 User Rd, User City, User State, 20002",
+      method: "Standard Shipping",
+      estimatedDelivery: "2025-03-25",
+    },
+    status: "delivered",
+    statusHistory: [
+      {
+        status: "pending",
+        timestamp: "2025-03-15T09:45:22.000Z",
+        note: "Order placed",
+      },
+      {
+        status: "processing",
+        timestamp: "2025-03-15T10:15:33.000Z",
+        note: "Payment confirmed",
+      },
+      {
+        status: "shipped",
+        timestamp: "2025-03-16T14:22:15.000Z",
+        note: "Order shipped via UPS",
+      },
+      {
+        status: "outForDelivery",
+        timestamp: "2025-03-18T08:10:42.000Z",
+        note: "Out for delivery",
+      },
+      {
+        status: "delivered",
+        timestamp: "2025-03-18T16:35:18.000Z",
+        note: "Delivered to recipient",
+      },
+    ],
+    orderDate: "2025-03-15T09:45:22.000Z",
+    deliveredDate: "2025-03-18T16:35:18.000Z",
+    trackingNumber: "UPS78956423156",
+  },
+  {
+    id: 2,
+    userId: 3,
+    orderNumber: "ORD-97563",
+    items: [
+      {
+        productId: 3,
+        quantity: 1,
+        price: 129.99,
+      },
+    ],
+    total: 129.99,
+    subtotal: 129.99,
+    tax: 11.05,
+    shippingCost: 0,
+    discount: 0,
+    finalTotal: 141.04,
+    paymentMethod: {
+      type: "bankTransfer",
+      details: {
+        bankName: "Chase Bank",
+        reference: "BT785632914",
+      },
+    },
+    shipping: {
+      address: "789 Shopper Ln, Shopper City, Shopper State, 30003",
+      method: "Express Shipping",
+      estimatedDelivery: "2025-03-22",
+    },
+    status: "shipped",
+    statusHistory: [
+      {
+        status: "pending",
+        timestamp: "2025-03-17T11:22:45.000Z",
+        note: "Order placed",
+      },
+      {
+        status: "processing",
+        timestamp: "2025-03-17T14:35:10.000Z",
+        note: "Bank transfer verified",
+      },
+      {
+        status: "shipped",
+        timestamp: "2025-03-19T09:15:33.000Z",
+        note: "Order shipped via FedEx",
+      },
+    ],
+    orderDate: "2025-03-17T11:22:45.000Z",
+    deliveredDate: null,
+    trackingNumber: "FEDEX58963214587",
+  },
+  {
+    id: 3,
+    userId: 2,
+    orderNumber: "ORD-34567",
+    items: [
+      {
+        productId: 14,
+        quantity: 1,
+        price: 119.5,
+      },
+      {
+        productId: 9,
+        quantity: 1,
+        price: 42.5,
+      },
+    ],
+    total: 162.0,
+    subtotal: 162.0,
+    tax: 13.77,
+    shippingCost: 7.99,
+    discount: 10.0,
+    finalTotal: 173.76,
+    paymentMethod: {
+      type: "cashOnDelivery",
+      details: {
+        additionalFee: 2.5,
+      },
+    },
+    shipping: {
+      address: "456 User Rd, User City, User State, 20002",
+      method: "Standard Shipping",
+      estimatedDelivery: "2025-03-26",
+    },
+    status: "outForDelivery",
+    statusHistory: [
+      {
+        status: "pending",
+        timestamp: "2025-03-18T15:33:27.000Z",
+        note: "Order placed",
+      },
+      {
+        status: "processing",
+        timestamp: "2025-03-18T16:05:45.000Z",
+        note: "Order confirmed",
+      },
+      {
+        status: "packed",
+        timestamp: "2025-03-19T11:22:18.000Z",
+        note: "Order packed",
+      },
+      {
+        status: "shipped",
+        timestamp: "2025-03-19T14:45:33.000Z",
+        note: "Order shipped via USPS",
+      },
+      {
+        status: "outForDelivery",
+        timestamp: "2025-03-20T08:25:12.000Z",
+        note: "Out for delivery",
+      },
+    ],
+    orderDate: "2025-03-18T15:33:27.000Z",
+    deliveredDate: null,
+    trackingNumber: "USPS45678912365",
+  },
+];

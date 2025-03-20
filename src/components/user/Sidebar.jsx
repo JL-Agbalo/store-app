@@ -6,9 +6,8 @@ function Sidebar({
   setActiveSection,
   setIsMobileMenuOpen,
 }) {
-  const handleSectionClick = (id) => {
-    setActiveSection(id);
-    // Close mobile menu when a section is selected
+  const handleSectionClick = (sectionKey) => {
+    setActiveSection(sectionKey);
     setIsMobileMenuOpen?.(false);
   };
 
@@ -16,12 +15,12 @@ function Sidebar({
     <div className="w-full lg:w-64 bg-white rounded-lg shadow-md">
       <nav className="p-4">
         <ul className="space-y-2">
-          {Object.values(sections).map(({ id, label }) => (
-            <li key={id}>
+          {Object.entries(sections).map(([key, { label }]) => (
+            <li key={key}>
               <button
-                onClick={() => handleSectionClick(id)}
+                onClick={() => handleSectionClick(key)}
                 className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
-                  activeSection === id
+                  activeSection === key
                     ? "bg-black text-white"
                     : "text-gray-700 hover:bg-gray-100"
                 }`}

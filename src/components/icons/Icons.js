@@ -19,7 +19,6 @@ import {
   MdOutlineEmail,
   MdLockOutline,
   MdOutlineChevronRight,
-  MdOutlineVerified,
 } from "react-icons/md";
 import { IoMdClose } from "react-icons/io";
 import {

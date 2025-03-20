@@ -2,7 +2,7 @@ import {
   Account,
   Profile,
   CardAndBank,
-  OrdersSection,
+  OrderHistory,
   NotificationsSection,
 } from "../components/user";
 
@@ -22,10 +22,10 @@ export const sections = {
     label: "Cards & Bank Accounts",
     component: CardAndBank,
   },
-  orders: {
-    id: "orders",
-    label: "Orders",
-    component: OrdersSection,
+  orderHistory: {
+    id: "orderHistory",
+    label: "Order History",
+    component: OrderHistory,
   },
   notifications: {
     id: "notifications",
