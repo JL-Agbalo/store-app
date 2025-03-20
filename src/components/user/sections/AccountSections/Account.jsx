@@ -23,7 +23,9 @@ function AccountSection() {
         <div className="mb-8">
           <LinkedAccounts />
         </div>
-        <DeleteAccount />
+        <div className="mb-8">
+          <DeleteAccount />
+        </div>
       </div>
     </section>
   );

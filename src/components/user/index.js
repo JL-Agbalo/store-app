@@ -1,9 +1,8 @@
 export { default as Sidebar } from "./Sidebar";
 
 // User Sections
-export { default as ProfileSection } from "./sections/ProfileSections/ProfileSection";
-export { default as AccountSection } from "./sections/AccountSections/AccountSection";
-export { default as BanksCardsSection } from "./sections/BanksCardsSection";
-export { default as AddressesSection } from "./sections/AddressesSection";
+export { default as Profile } from "./sections/ProfileSections/Profile";
+export { default as Account } from "./sections/AccountSections/Account";
+export { default as CardAndBank } from "./sections/CardAndBankSections/CardAndBank";
 export { default as OrdersSection } from "./sections/OrdersSection";
 export { default as NotificationsSection } from "./sections/NotificationsSection";

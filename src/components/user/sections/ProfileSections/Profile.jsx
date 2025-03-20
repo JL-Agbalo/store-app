@@ -2,7 +2,7 @@ import React from "react";
 import { UserImage, UserInformation } from ".";
 import { users } from "../../../../data/appStoreData";
 
-function ProfileSection() {
+function Profile() {
   const user = users[0];
 
   return (
@@ -18,4 +18,4 @@ function ProfileSection() {
   );
 }
 
-export default ProfileSection;
+export default Profile;

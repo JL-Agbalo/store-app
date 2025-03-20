@@ -1,8 +1,7 @@
 import {
-  AccountSection,
-  ProfileSection,
-  BanksCardsSection,
-  AddressesSection,
+  Account,
+  Profile,
+  CardAndBank,
   OrdersSection,
   NotificationsSection,
 } from "../components/user";
@@ -11,22 +10,17 @@ export const sections = {
   profile: {
     id: "profile",
     label: "Profile",
-    component: ProfileSection,
+    component: Profile,
   },
   account: {
     id: "account",
     label: "Account",
-    component: AccountSection,
+    component: Account,
   },
   payment: {
     id: "payment",
     label: "Cards & Bank Accounts",
-    component: BanksCardsSection,
-  },
-  addresses: {
-    id: "addresses",
-    label: "Addresses",
-    component: AddressesSection,
+    component: CardAndBank,
   },
   orders: {
     id: "orders",
