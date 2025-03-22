@@ -7,6 +7,7 @@ function OrderHistory() {
     status: "all",
   });
   const [selectedOrderId, setSelectedOrderId] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const filterOrders = (orders) => {
     if (filters.status === "all") return orders;
@@ -14,8 +15,13 @@ function OrderHistory() {
   };
 
   const handleSelectOrder = (orderId) => {
-    console.log("Selected order:", orderId); // Add this line for debugging
     setSelectedOrderId(orderId);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedOrderId(null);
   };
 
   return (
@@ -39,7 +45,13 @@ function OrderHistory() {
             </div>
           </div>
         </div>
-        {selectedOrderId && <OrderDetails orderId={selectedOrderId} />}
+        {selectedOrderId && (
+          <OrderDetails
+            orderId={selectedOrderId}
+            isOpen={isModalOpen}
+            onClose={handleCloseModal}
+          />
+        )}
       </div>
     </section>
   );

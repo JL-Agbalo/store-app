@@ -9,9 +9,6 @@ export { default as MainLayout } from "./layout/MainLayout";
 export { default as Navbar } from "./navbar/Navbar";
 export { default as Footer } from "./footer/Footer";
 
-// Modal Components
-export { default as ModalWrapper } from "./modals/ModalWrapper";
-
 // Loading Components
 export { default as ImageCardLoader } from "./Loader";
 
