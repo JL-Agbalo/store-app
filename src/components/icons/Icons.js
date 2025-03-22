@@ -29,8 +29,9 @@ import {
   IoLogOutOutline,
   IoChevronDownOutline,
   IoCheckmarkCircle,
+  IoPrintOutline,
 } from "react-icons/io5";
-import { GoHome } from "react-icons/go";
+import { GoHome, GoDownload } from "react-icons/go";
 import { TbCategoryMinus } from "react-icons/tb";
 import { LuTriangleAlert } from "react-icons/lu";
 
@@ -91,5 +92,8 @@ export const UserProfile = {
 };
 
 export const Common = {
+  ArrowDown: IoChevronDownOutline,
   Close: IoMdClose,
+  Print: IoPrintOutline,
+  Download: GoDownload,
 };
