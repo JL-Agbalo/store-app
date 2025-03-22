@@ -38,6 +38,21 @@
 - [x] Create `RelatedProducts` section
 - [x] Create `Testimonials` section
 - [x] Create `Footer` with links
+- [ ] Create `Notification` component for displaying alerts/messages
+- [ ] Add success notifications (e.g., "Added to cart", "Order placed")
+- [ ] Add error notifications (e.g., "Failed to add item", "Network error")
+- [ ] Add info notifications (e.g., "Item out of stock", "Loading...")
+
+## 4️⃣.1️⃣ Notification Settings
+
+- [ ] Create notification preferences in user settings
+- [ ] Add notification sound toggle
+- [ ] Add notification duration settings (short/medium/long)
+- [ ] Add notification position settings (top-right, bottom-right, etc.)
+- [ ] Allow users to disable specific notification types
+- [ ] Add notification history page
+- [ ] Implement "Do Not Disturb" mode
+- [ ] Add email notification preferences
 
 ## 5️⃣ React Hooks Usage
 

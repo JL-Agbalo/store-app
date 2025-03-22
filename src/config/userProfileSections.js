@@ -3,7 +3,7 @@ import {
   Profile,
   CardAndBank,
   OrderHistory,
-  NotificationsSection,
+  Notification,
 } from "../components/user";
 
 export const sections = {
@@ -27,9 +27,9 @@ export const sections = {
     label: "Order History",
     component: OrderHistory,
   },
-  notifications: {
+  Notification: {
     id: "notifications",
     label: "Notifications",
-    component: NotificationsSection,
+    component: Notification,
   },
 };
