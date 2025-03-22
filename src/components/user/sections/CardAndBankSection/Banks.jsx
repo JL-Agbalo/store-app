@@ -1,23 +1,24 @@
 import React from "react";
+import { Button } from "../../../common";
 
 function Banks() {
-  // TODO: Implement the UI for the Bank component
-
   return (
     <div>
-      <h3 className="text-lg font-medium mb-4">Bank Accounts</h3>
-      <div className="grid gap-4">
-        <div className="p-4 flex justify-between items-center">
+      <h3 className="text-sm font-medium text-gray-500 uppercase mb-4">
+        Bank Accounts
+      </h3>
+      <div className="bg-gray-100 rounded-md divide-y divide-gray-100">
+        <div className="p-4 flex items-center justify-between hover:bg-gray-50 transition-colors">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gray-200 rounded flex items-center justify-center">
-              <span className="text-sm text-gray-500">Bank</span>
+            <div className="w-10 h-10 bg-white border rounded flex items-center justify-center">
+              <span className="text-xs font-medium">BANK</span>
             </div>
             <div>
-              <p className="font-medium">Main Account</p>
-              <p className="text-sm text-gray-500">**** 1234</p>
+              <p className="text-sm text-gray-900">Main Account</p>
+              <p className="text-xs text-gray-500">**** 1234</p>
             </div>
           </div>
-          <button className="text-red-500 hover:text-red-600">Remove</button>
+          <Button>Remove</Button>
         </div>
       </div>
     </div>

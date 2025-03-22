@@ -3,16 +3,14 @@ import { orderHistory } from "../../../../data/appStoreData";
 import { OrderList, OrderDetails, OrderFilter } from ".";
 
 function OrderHistory() {
-  const [filter, setFilter] = useState("all");
+  const [filters, setFilters] = useState({
+    status: "all",
+  });
   const [selectedOrder, setSelectedOrder] = useState(null);
 
   const filterOrders = (orders) => {
-    if (filter === "all") return orders;
-    return orders.filter((order) => order.status === filter);
-  };
-
-  const handleOrderClick = (order) => {
-    setSelectedOrder(order);
+    if (filters.status === "all") return orders;
+    return orders.filter((order) => order.status === filters.status);
   };
 
   const handleBack = () => {
@@ -20,21 +18,22 @@ function OrderHistory() {
   };
 
   return (
-    <section className="max-w-3xl mx-auto p-4">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-medium text-gray-900">Orders</h2>
-        {!selectedOrder && (
-          <OrderFilter filter={filter} onFilterChange={setFilter} />
-        )}
+    <section className="p-5">
+      <h2 className="text-xl font-semibold mb-4">Order History</h2>
+      <div>
+        <div className="mb-8">
+          {!selectedOrder && (
+            <OrderFilter filters={filters} onFilterChange={setFilters} />
+          )}
+          <div className="bg-white border border-gray-100 rounded-sm">
+            {selectedOrder ? (
+              <OrderDetails order={selectedOrder} onBack={handleBack} />
+            ) : (
+              <OrderList orders={filterOrders(orderHistory)} />
+            )}
+          </div>
+        </div>
       </div>
-      {selectedOrder ? (
-        <OrderDetails order={selectedOrder} onBack={handleBack} />
-      ) : (
-        <OrderList
-          orders={filterOrders(orderHistory)}
-          onOrderClick={handleOrderClick}
-        />
-      )}
     </section>
   );
 }

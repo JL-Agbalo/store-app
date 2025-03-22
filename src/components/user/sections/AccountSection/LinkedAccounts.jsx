@@ -29,6 +29,7 @@ function LinkedAccounts() {
       </p>
       <div className="flex gap-4">
         {accounts.map((account) => (
+          // TODO Apply Reusable Button here
           <button
             key={account.name}
             onClick={() => handleAccountClick(account)}

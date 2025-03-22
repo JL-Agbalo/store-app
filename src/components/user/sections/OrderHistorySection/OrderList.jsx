@@ -1,23 +1,18 @@
 import React from "react";
-import { OrderItem } from ".";
-function OrderList({ orders, onOrderClick }) {
+import OrderTable from "./OrderTable";
+
+function OrderList({ orders }) {
   if (!orders.length) {
     return (
-      <div className="text-center py-8 bg-gray-50 rounded-lg">
+      <div className="text-center py-8">
         <p className="text-gray-500">No orders found</p>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      {orders.map((order) => (
-        <OrderItem
-          key={order.id}
-          order={order}
-          onClick={() => onOrderClick(order)}
-        />
-      ))}
+    <div className="overflow-x-auto">
+      <OrderTable orders={orders} />
     </div>
   );
 }

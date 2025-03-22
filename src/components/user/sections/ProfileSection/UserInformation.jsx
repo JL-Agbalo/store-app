@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { UserProfile as Icons } from "../../../icons/Icons";
-
+import { Button } from "../../../common";
 function UserInformation({ user }) {
   const [formData, setFormData] = useState({
     firstName: user.firstName,
@@ -47,7 +47,7 @@ function UserInformation({ user }) {
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
+            className="w-full p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
           />
         </div>
 
@@ -142,9 +142,7 @@ function UserInformation({ user }) {
       </div>
 
       <div className="flex justify-end">
-        <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors">
-          Save Changes
-        </button>
+        <Button>Save Changes</Button>
       </div>
     </div>
   );

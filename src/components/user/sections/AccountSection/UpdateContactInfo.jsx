@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { UserProfile as Icons } from "../../../icons/Icons";
+import { Button } from "../../../common";
 
 function UpdateContactInfo({ user }) {
   const [formData, setFormData] = useState({
@@ -43,6 +44,7 @@ function UpdateContactInfo({ user }) {
                   ${verified.email ? "text-green-500" : "text-red-500"}`}
                 />
               </div>
+              {/* TODO Apply Reusbale Button here */}
               <button
                 className={`px-4 py-2 rounded-lg text-sm ${
                   verified.email
@@ -70,6 +72,7 @@ function UpdateContactInfo({ user }) {
                   ${verified.mobile ? "text-green-500" : "text-red-500"}`}
                 />
               </div>
+              {/* TODO Apply Reusbale Button here */}
               <button
                 className={`px-4 py-2 rounded-lg text-sm ${
                   verified.mobile

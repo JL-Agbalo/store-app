@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { UserProfile as Icons } from "../../../icons/Icons";
+import { Button } from "../../../common";
 
 function ChangePassword() {
   const [formData, setFormData] = useState({
@@ -78,9 +79,7 @@ function ChangePassword() {
         </div>
       </div>
       <div className="flex justify-end pt-2">
-        <button className="px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-900 transition-colors">
-          Update Password
-        </button>
+        <Button>Change Password</Button>
       </div>
     </div>
   );

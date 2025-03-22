@@ -1,14 +1,26 @@
 import React from "react";
 
 function OrderDetails({ order, onBack }) {
+  const getStatusColor = (status) => {
+    switch (status.toLowerCase()) {
+      case "delivered":
+        return "text-green-700";
+      case "processing":
+        return "text-blue-700";
+      case "cancelled":
+        return "text-red-700";
+      case "pending":
+        return "text-yellow-700";
+      default:
+        return "text-gray-600";
+    }
+  };
+
   return (
-    <div className="bg-gray-100 rounded-lg ">
+    <div className="bg-white rounded-lg shadow-sm">
       <div className="p-6">
-        <button
-          onClick={onBack}
-          className="mb-4 text-sm font-medium text-gray-600 hover:text-gray-900"
-        >
-          ← Back to Orders
+        <button onClick={onBack} className="flex items-center gap-2">
+          &larr; Back to Orders
         </button>
         <div className="space-y-4">
           <div className="flex justify-between items-start">
@@ -33,7 +45,9 @@ function OrderDetails({ order, onBack }) {
             ))}
           </div>
           <div className="border-t pt-4">
-            <p className="text-gray-600">Status: {order.status}</p>
+            <p className={`${getStatusColor(order.status)}`}>
+              Status: {order.status}
+            </p>
           </div>
         </div>
       </div>

@@ -1,18 +1,25 @@
 import React from "react";
 
-function OrderFilter({ filter, onFilterChange }) {
+function OrderFilter({ filters, onFilterChange }) {
   return (
-    <select
-      className="text-sm border-0 bg-gray-50 rounded px-4 py-1 focus:ring-0"
-      value={filter}
-      onChange={(e) => onFilterChange(e.target.value)}
-    >
-      <option value="all">All</option>
-      <option value="pending">Pending</option>
-      <option value="processing">Processing</option>
-      <option value="shipped">Shipped</option>
-      <option value="delivered">Delivered</option>
-    </select>
+    <div className="mb-6">
+      <div className="flex items-center gap-4">
+        <select
+          value={filters.status}
+          onChange={(e) =>
+            onFilterChange({ ...filters, status: e.target.value })
+          }
+          className="px-4 py-2 text-sm rounded-md border bg-white text-gray-600 cursor-pointer hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-200"
+        >
+          <option value="all">All Orders</option>
+          <option value="Pending">Pending</option>
+          <option value="Processing">Processing</option>
+          <option value="Shipped">Shipped</option>
+          <option value="Delivered">Delivered</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+      </div>
+    </div>
   );
 }
 
