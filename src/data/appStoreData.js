@@ -973,7 +973,7 @@ export const orderHistory = [
     },
   },
   {
-    orderId: "ORD123457",
+    orderId: "ORD123456",
     date: "2025-03-18",
     items: [
       {
@@ -994,7 +994,7 @@ export const orderHistory = [
     },
   },
   {
-    orderId: "ORD123458",
+    orderId: "ORD123456",
     date: "2025-03-16",
     items: [
       {
@@ -1021,7 +1021,7 @@ export const orderHistory = [
     },
   },
   {
-    orderId: "ORD123459",
+    orderId: "ORD123456",
     date: "2025-03-14",
     items: [
       {
@@ -1042,7 +1042,7 @@ export const orderHistory = [
     },
   },
   {
-    orderId: "ORD123460",
+    orderId: "ORD123456",
     date: "2025-03-10",
     items: [
       {
@@ -1063,3 +1063,40 @@ export const orderHistory = [
     },
   },
 ];
+
+export const orderDetails = {
+  orderId: "ORD123456",
+  orderDate: "March 20, 2025",
+  orderStatus: "Shipped",
+  paymentMethod: "Credit Card",
+  totalAmount: "$360.00",
+  customer: {
+    name: "John Doe",
+    email: "johndoe@email.com",
+    phone: "+1 234 567 8901",
+    address: "123 Main St, New York, NY 10001",
+  },
+  products: [
+    {
+      id: 1,
+      image: "https://placehold.co/100x100",
+      name: "Nike Air Max 270",
+      quantity: 2,
+      price: "$120",
+      subtotal: "$240",
+    },
+    {
+      id: 2,
+      image: "https://placehold.co/100x100",
+      name: "Adidas Ultraboost",
+      quantity: 1,
+      price: "$120",
+      subtotal: "$120",
+    },
+  ],
+  shipping: {
+    method: "Express Shipping - FedEx",
+    trackingNumber: "#TRK123456789",
+    estimatedDelivery: "March 25, 2025",
+  },
+};

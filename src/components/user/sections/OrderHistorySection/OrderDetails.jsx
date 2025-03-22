@@ -1,6 +1,11 @@
 import React from "react";
+import { orderDetails } from "../../../../data/appStoreData";
 
-function OrderDetails({ order, onBack }) {
+function OrderDetails({ orderId }) {
+  if (orderDetails.orderId !== orderId) {
+    return <div>Order not found</div>;
+  }
+
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
       case "delivered":
@@ -17,39 +22,76 @@ function OrderDetails({ order, onBack }) {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-sm">
-      <div className="p-6">
-        <button onClick={onBack} className="flex items-center gap-2">
-          &larr; Back to Orders
-        </button>
-        <div className="space-y-4">
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="text-lg font-medium">Order #{order.id}</h3>
-              <p className="text-gray-600">{order.date}</p>
-            </div>
-            <span className="text-green-600 font-medium">
-              ${order.total.toFixed(2)}
+    // REDESIGNED AND ADD REUSABLE MODAL
+    <div className="bg-white rounded-lg shadow-sm p-6">
+      <div className="grid grid-cols-2 gap-6">
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Order Information</h3>
+          <p className="mb-2">Order ID: {orderDetails.orderId}</p>
+          <p className="mb-2">Date: {orderDetails.orderDate}</p>
+          <p className="mb-2">
+            Status:{" "}
+            <span className={getStatusColor(orderDetails.orderStatus)}>
+              {orderDetails.orderStatus}
             </span>
-          </div>
-          <div className="border-t pt-4">
-            <h4 className="font-medium mb-2">Order Items</h4>
-            {order.items.map((item) => (
-              <div
-                key={item.id}
-                className="flex justify-between items-center py-2"
-              >
-                <span className="text-gray-600">{item.name}</span>
-                <span className="text-gray-900">${item.price.toFixed(2)}</span>
-              </div>
-            ))}
-          </div>
-          <div className="border-t pt-4">
-            <p className={`${getStatusColor(order.status)}`}>
-              Status: {order.status}
-            </p>
-          </div>
+          </p>
+          <p className="mb-2">Payment Method: {orderDetails.paymentMethod}</p>
+          <p className="mb-2">Total Amount: {orderDetails.totalAmount}</p>
         </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-4">Customer Details</h3>
+          <p className="mb-2">{orderDetails.customer.name}</p>
+          <p className="mb-2">{orderDetails.customer.email}</p>
+          <p className="mb-2">{orderDetails.customer.phone}</p>
+          <p className="mb-2">{orderDetails.customer.address}</p>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold mb-4">Products</h3>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="border-b">
+              <tr>
+                <th className="text-left pb-2">Product</th>
+                <th className="text-center pb-2">Quantity</th>
+                <th className="text-right pb-2">Price</th>
+                <th className="text-right pb-2">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              {orderDetails.products.map((product) => (
+                <tr key={product.id} className="border-b">
+                  <td className="py-2">
+                    <div className="flex items-center">
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-12 h-12 object-cover mr-3"
+                      />
+                      <span>{product.name}</span>
+                    </div>
+                  </td>
+                  <td className="text-center">{product.quantity}</td>
+                  <td className="text-right">{product.price}</td>
+                  <td className="text-right">{product.subtotal}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold mb-4">Shipping Information</h3>
+        <p className="mb-2">Method: {orderDetails.shipping.method}</p>
+        <p className="mb-2">
+          Tracking Number: {orderDetails.shipping.trackingNumber}
+        </p>
+        <p className="mb-2">
+          Estimated Delivery: {orderDetails.shipping.estimatedDelivery}
+        </p>
       </div>
     </div>
   );

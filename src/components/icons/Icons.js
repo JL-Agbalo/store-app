@@ -89,3 +89,7 @@ export const UserProfile = {
   Eye: FaRegEyeSlash,
   Alert: LuTriangleAlert,
 };
+
+export const Common = {
+  Close: IoMdClose,
+};
