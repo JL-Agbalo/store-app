@@ -1,6 +1,6 @@
 import React from "react";
 import { CartItem } from "./index";
-import { products } from "../../data/appStoreData";
+import { products } from "../../data/products/products";
 
 function CartList() {
   const cartItems = products.slice(0, 10).map((product) => ({

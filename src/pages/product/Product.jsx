@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProductItem, RelatedProducts } from "../../components/product";
-import { getProductById } from "../../data/appStoreData";
+import { getProductById } from "../../data/products/products";
 
 function Product() {
   const { id } = useParams();

@@ -6,7 +6,7 @@ import NavDropdown from "./NavDropdown";
 import MobileMenu from "./MobileMenu";
 import { CartModal } from "../cart";
 import { mainNavLinks } from "../../config/navigation";
-import { users } from "../../data/appStoreData";
+import { users } from "../../data/users/users";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);

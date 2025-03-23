@@ -1,6 +1,6 @@
 import React from "react";
 import { Modal } from "../../../common";
-import { orderDetails } from "../../../../data/appStoreData";
+import { orderDetails } from "../../../../data/order/orderDetails";
 import ActionButtons from "./ActionButtons";
 
 function OrderDetails({ orderId, isOpen, onClose }) {

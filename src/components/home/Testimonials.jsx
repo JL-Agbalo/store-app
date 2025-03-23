@@ -1,5 +1,5 @@
 import React from "react";
-import { testimonials } from "../../data/appStoreData";
+import { testimonials } from "../../data/users/testimonials";
 
 function Testimonials() {
   return (

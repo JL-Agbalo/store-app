@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { notificationSettings } from "../../../../data/appStoreData";
+import { notificationSettings } from "../../../../data/users/NotificationSettings";
 import NotificationItem from "./NotificationItem";
 
 function NotificationSettings() {

@@ -5,7 +5,7 @@ import {
   ChangePassword,
   DeleteAccount,
 } from ".";
-import { users } from "../../../../data/appStoreData";
+import { users } from "../../../../data/users/users";
 
 function AccountSection() {
   const user = users[0];

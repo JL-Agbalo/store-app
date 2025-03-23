@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { orderHistory } from "../../../../data/appStoreData";
+import { orderHistory } from "../../../../data/order/orderHistory";
 import { OrderTable, OrderDetails, OrderFilter } from ".";
 
 function OrderHistory() {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { users } from "../../data/appStoreData";
+import { users } from "../../data/users/users";
 import ShippingInformation from "./ShippingInformation";
 import PaymentInformation from "./PaymentInformation";
 import PaymentProcessing from "./PaymentProcessing";

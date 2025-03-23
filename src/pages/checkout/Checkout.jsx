@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CheckoutForm, CheckoutSummary } from "../../components/checkout";
-import { products } from "../../data/appStoreData";
+import { products } from "../../data/products/products";
 
 function Checkout() {
   const [step, setStep] = useState(1);

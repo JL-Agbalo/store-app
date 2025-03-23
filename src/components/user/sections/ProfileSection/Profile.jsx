@@ -1,6 +1,6 @@
 import React from "react";
 import { UserImage, UserInformation } from ".";
-import { users } from "../../../../data/appStoreData";
+import { users } from "../../../../data/users/users";
 
 function Profile() {
   const user = users[0];
