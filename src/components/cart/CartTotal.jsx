@@ -2,44 +2,44 @@ import React from "react";
 
 function CartTotal() {
   return (
-    <div className="rounded-xl bg-gray-100 p-6 space-y-7">
-      <div className="space-y-4">
+    <div className="rounded-xl bg-gray-50 p-4 md:p-6 space-y-4 md:space-y-6 mx-2 md:mx-0">
+      {/* Summary */}
+      <div className="space-y-3">
         <div className="flex justify-between text-sm">
-          <span className="text-gray-600">Subtotal (3 items)</span>
-          <span className="font-medium text-gray-900">$89.98</span>
+          <span className="text-gray-500">Subtotal (3 items)</span>
+          <span className="font-medium">$89.98</span>
         </div>
         <div className="flex justify-between text-sm">
-          <span className="text-gray-600">Shipping</span>
+          <span className="text-gray-500">Shipping</span>
           <span className="text-green-600 font-medium">Free</span>
         </div>
         <div className="flex justify-between text-sm">
-          <span className="text-gray-600">Tax</span>
-          <span className="font-medium text-gray-900">$8.99</span>
+          <span className="text-gray-500">Tax</span>
+          <span className="font-medium">$8.99</span>
         </div>
       </div>
 
-      {/* Promo Code Input */}
-      <div className="flex gap-2">
+      {/* Promo Code */}
+      <div className="relative">
         <input
           type="text"
-          placeholder="Promo code"
-          className="flex-1 min-w-0 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-black"
+          placeholder="Enter promo code"
+          className="w-full px-3 md:px-4 py-2.5 md:py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:border-black transition-colors"
         />
-        <button className="px-3 py-2 bg-black text-white rounded-lg text-sm font-medium hover:bg-black transition-colors whitespace-nowrap">
+        <button className="absolute right-1.5 md:right-2 top-1/2 -translate-y-1/2 px-3 md:px-4 py-1 md:py-1.5 bg-black text-white text-sm font-medium rounded-lg hover:bg-gray-900 transition-colors">
           Apply
         </button>
       </div>
 
-      <div className="pt-4">
-        <div className="flex justify-between items-center">
-          <div>
-            <p className="text-lg font-semibold text-gray-900">Total</p>
-            <p className="text-xs text-gray-500 mt-1">Including VAT</p>
-          </div>
-          <div className="text-right">
-            <p className="text-xl font-semibold text-gray-900">$98.97</p>
-            <p className="text-xs text-green-600 mt-1">You save $6.99</p>
-          </div>
+      {/* Total */}
+      <div className="pt-4 border-t border-gray-200">
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-lg font-semibold">Total</span>
+          <span className="text-2xl font-bold">$98.97</span>
+        </div>
+        <div className="flex justify-between items-center text-sm">
+          <span className="text-gray-500">Including VAT</span>
+          <span className="text-green-600">You save $6.99</span>
         </div>
       </div>
     </div>

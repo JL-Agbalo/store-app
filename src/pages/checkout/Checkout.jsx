@@ -16,7 +16,7 @@ function Checkout() {
 
   return (
     <main className="min-h-screen bg-gray-100 py-8">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Steps Indicator */}
         <div className="flex items-center justify-center mb-8">
           {["Shipping", "Payment"].map((label, i) => (
@@ -43,21 +43,21 @@ function Checkout() {
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col lg:flex-row gap-6">
-          <div className="lg:w-2/3">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="lg:w-3/5">
             <div className="bg-white rounded-lg shadow-md p-6">
               <CheckoutForm step={step} {...checkoutData} />
             </div>
           </div>
-          <div className="lg:w-1/3">
+          <div className="lg:w-2/5">
             <div className="sticky top-24">
-              <div className="bg-white rounded-lg shadow-md p-6">
+              <div className="bg-white rounded-lg shadow-md p-8">
                 <CheckoutSummary {...checkoutData} />
-                <div className="mt-6 space-y-3">
+                <div className="mt-8 space-y-4">
                   {step === 1 ? (
                     <button
                       onClick={() => setStep(2)}
-                      className="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-900 transition duration-300"
+                      className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300"
                       disabled={checkoutData.cartItems.length === 0}
                     >
                       Continue to Payment
@@ -65,7 +65,7 @@ function Checkout() {
                   ) : (
                     <button
                       onClick={() => setStep(1)}
-                      className="w-full text-center text-black hover:text-gray-600 hover:underline py-2 transition-colors"
+                      className="w-full text-center text-black hover:text-gray-600 hover:underline py-3 transition-colors"
                     >
                       Back to Shipping
                     </button>

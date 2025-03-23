@@ -20,28 +20,28 @@ function CartDetails({ isOpen, onClose, setIsCartOpen }) {
       title="Shopping Cart"
       icon={Icons.Bag}
     >
-      <div className="flex flex-col md:flex-row flex-1">
+      <div className="flex flex-col md:flex-row md:gap-6">
         {/* Left Column - Cart Items */}
-        <div className="md:w-2/3">
+        <div className="flex-1 min-w-0">
           <div className="overflow-y-auto max-h-[60vh] md:max-h-[55vh]">
             <CartList />
           </div>
         </div>
 
         {/* Right Column - Total & Actions */}
-        <div className="md:w-1/2 md:rounded-r-2xl">
-          <div className="pt-3 sticky top-0">
+        <div className="w-full md:w-[380px] flex-shrink-0 mt-6 md:mt-5">
+          <div className="sticky top-0">
             <CartTotal />
-            <div className="mt-6 space-y-3">
+            <div className="mt-4 space-y-3 px-2 md:px-0">
               <button
                 onClick={handleCheckout}
-                className="w-full bg-black text-white py-2 rounded-xl hover:bg-gray-900 transition duration-300 font-medium text-base"
+                className="w-full bg-black text-white py-3 rounded-xl hover:bg-gray-900 transition duration-300 font-medium text-sm"
               >
                 Proceed to Checkout
               </button>
               <button
                 onClick={onClose}
-                className="w-full text-center text-black hover:text-gray-600 hover:underline py-2 transition-colors"
+                className="w-full text-center text-gray-500 hover:text-black py-2 transition-colors text-sm"
               >
                 Continue Shopping →
               </button>
