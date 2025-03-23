@@ -8,7 +8,7 @@ function OrderDetails({ orderId, isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Order Details">
-      <div className="grid md:grid-cols-2 gap-6 p-6">
+      <div className="grid md:grid-cols-2 gap-6 py-6">
         {/* Left Column - Order & Customer Info */}
         <div className="bg-gray-100 rounded-lg">
           {/* Order Information */}
