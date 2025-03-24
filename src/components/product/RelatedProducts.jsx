@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { ProductCard } from "./index";
-import { getProductsByCategory } from "../../data/products/products";
+// import { getProductsByCategory } from "../../data/products/products";
 
 function RelatedProduct({ categoryId }) {
-  const [relatedProducts, setrelatedProducts] = useState([]);
+  const [relatedProducts, setRelatedProducts] = useState([]);
 
-  useEffect(() => {
-    async function fetchRelatedProducts() {
-      try {
-        const products = getProductsByCategory(categoryId);
-        setrelatedProducts(products);
-      } catch (error) {
-        console.error("Error fetching related products:", error);
-      }
-    }
-    fetchRelatedProducts();
-  }, [categoryId]);
+  // useEffect(() => {
+  //   async function fetchRelatedProducts() {
+  //     try {
+  //       const products = getProductsByCategory(categoryId);
+  //       setRelatedProducts(products);
+  //     } catch (error) {
+  //       console.error("Error fetching related products:", error);
+  //     }
+  //   }
+  //   fetchRelatedProducts();
+  // }, [categoryId]);
 
   return (
     <div>

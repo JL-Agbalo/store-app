@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import { getProducts } from "../../service/platziApi";
-import { products as getProductsData } from "../../data/products/products";
-
+import { getProductList } from "../../services/productService";
 import {
   HeroBanner,
   FeaturedProducts,
@@ -17,7 +15,7 @@ function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = getProductsData;
+        const data = getProductList();
         setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
@@ -30,7 +28,7 @@ function Home() {
   return (
     <>
       <HeroBanner />
-      <FeaturedProducts products={products.slice(1, 5)} />
+      <FeaturedProducts products={products?.slice(1, 5)} />
       <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
         <Promotions />
         <NewArrivals products={products.slice(10, 14)} />
