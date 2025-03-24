@@ -3,15 +3,15 @@ import { UserProfile as Icons } from "../../../icons/Icons";
 import { Button } from "../../../common";
 function UserInformation({ user }) {
   const [formData, setFormData] = useState({
-    firstName: user.firstName,
-    lastName: user.lastName,
-    mobile: user.mobile,
+    firstName: user.first_name,
+    lastName: user.last_name,
+    phone: user.profile.phone,
     email: user.email,
-    street: user.address.street,
-    city: user.address.city,
-    state: user.address.state,
-    zip: user.address.zip,
-    country: user.address.country,
+    street: user.profile.street,
+    city: user.profile.city,
+    state: user.profile.state,
+    postal_code: user.profile.postal_code,
+    country: user.profile.country,
   });
 
   const handleChange = (e) => {
@@ -47,7 +47,7 @@ function UserInformation({ user }) {
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
-            className="w-full p-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
+            className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
           />
         </div>
 
@@ -66,12 +66,12 @@ function UserInformation({ user }) {
         </div>
 
         <div>
-          <label className="block text-gray-700 mb-1">Mobile Number</label>
+          <label className="block text-gray-700 mb-1">Phone Number</label>
           <div className="relative">
             <input
               type="tel"
-              name="mobile"
-              value={formData.mobile}
+              name="phone"
+              value={formData.phone}
               disabled
               className="w-full p-2 pl-9 border border-gray-200 rounded-lg bg-gray-100 text-gray-600 cursor-not-allowed"
             />
@@ -122,7 +122,7 @@ function UserInformation({ user }) {
             <input
               type="text"
               name="zip"
-              value={formData.zip}
+              value={formData.postal_code}
               onChange={handleChange}
               className="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
             />

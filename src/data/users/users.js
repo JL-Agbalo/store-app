@@ -55,17 +55,16 @@ export const users = [
 export const usersData = [
   {
     id: 1,
-    first_name: "Alice",
+    first_name: "Fish",
     last_name: "Johnson",
-    email: "alice.johnson@example.com",
+    email: "Fish@example.com",
     password_hash: "$2a$10$hashedpassword1",
     created_at: "2025-03-23T12:00:00Z",
     profile: {
       phone: "+1 234 567 890",
-      avatar_url: "https://placehold.co/100",
+      avatar_url: "https://randomuser.me/api/portraits/men/1.jpg",
       date_of_birth: "1990-05-15",
-      address_line1: "123 Main St",
-      address_line2: "Apt 4B",
+      street: "123 Main St Apt 4B",
       city: "New York",
       state: "NY",
       postal_code: "10001",
@@ -88,8 +87,7 @@ export const usersData = [
       phone: "+1 987 654 321",
       avatar_url: "https://placehold.co/100",
       date_of_birth: "1985-10-20",
-      address_line1: "456 Elm St",
-      address_line2: "",
+      street: "456 Elm St",
       city: "Los Angeles",
       state: "CA",
       postal_code: "90001",
@@ -110,8 +108,7 @@ export const usersData = [
       phone: "+44 7890 123 456",
       avatar_url: "https://placehold.co/100",
       date_of_birth: "1995-07-25",
-      address_line1: "789 Pine St",
-      address_line2: "Suite 5",
+      street: "789 Pine St Suite 5",
       city: "London",
       state: "London",
       postal_code: "SW1A 1AA",
@@ -132,8 +129,7 @@ export const usersData = [
       phone: "+61 400 123 456",
       avatar_url: "https://placehold.co/100",
       date_of_birth: "1998-03-10",
-      address_line1: "123 Beach Rd",
-      address_line2: "",
+      street: "123 Beach Rd",
       city: "Sydney",
       state: "NSW",
       postal_code: "2000",
@@ -145,4 +141,4 @@ export const usersData = [
   },
 ];
 
-export const user = users[0];
+export const user = usersData[0];

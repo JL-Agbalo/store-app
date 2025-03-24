@@ -5,12 +5,12 @@ import { Button } from "../../../common";
 function UpdateContactInfo({ user }) {
   const [formData, setFormData] = useState({
     email: user.email,
-    mobile: user.mobile,
+    phone: user.profile.phone,
   });
 
   const [verified, setVerified] = useState({
     email: true,
-    mobile: false,
+    phone: false,
   });
 
   const handleChange = (e) => {
@@ -57,30 +57,30 @@ function UpdateContactInfo({ user }) {
             </div>
           </div>
           <div>
-            <label className="block text-gray-700 mb-1">Mobile Number</label>
+            <label className="block text-gray-700 mb-1">Phone Number</label>
             <div className="flex gap-2">
               <div className="relative flex-1">
                 <input
                   type="tel"
-                  name="mobile"
-                  value={formData.mobile}
+                  name="phone"
+                  value={formData.phone}
                   onChange={handleChange}
                   className="w-full p-2 pr-9 border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-black"
                 />
                 <Icons.Verified
                   className={`w-4 h-4 absolute right-2.5 top-1/2 transform -translate-y-1/2 
-                  ${verified.mobile ? "text-green-500" : "text-red-500"}`}
+                  ${verified.phone ? "text-green-500" : "text-red-500"}`}
                 />
               </div>
               {/* TODO Apply Reusbale Button here */}
               <button
                 className={`px-4 py-2 rounded-lg text-sm ${
-                  verified.mobile
+                  verified.phone
                     ? "bg-green-100 text-green-800"
                     : "bg-black text-white hover:bg-gray-900"
                 } transition-colors`}
               >
-                {verified.mobile ? "Verified" : "Verify"}
+                {verified.phone ? "Verified" : "Verify"}
               </button>
             </div>
           </div>

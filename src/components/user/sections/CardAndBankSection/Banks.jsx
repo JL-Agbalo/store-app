@@ -4,7 +4,7 @@ import { Button } from "../../../common";
 function Banks() {
   return (
     <div>
-      <h3 className="text-sm font-medium text-gray-500 uppercase mb-4">
+      <h3 className="text-base font-medium text-gray-800 mb-4">
         Bank Accounts
       </h3>
       <div className="bg-gray-100 rounded-md divide-y divide-gray-100">

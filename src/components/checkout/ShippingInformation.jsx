@@ -6,10 +6,10 @@ function ShippingInformation({ user }) {
   return (
     <div className="space-y-6">
       <UserProfileCard
-        firstName={user.firstName}
-        lastName={user.lastName}
+        firstName={user.first_name}
+        lastName={user.last_name}
         email={user.email}
-        image={user.image}
+        image={user.profile.avatar_url}
         className="w-16 h-16"
       />
       <h3 className="text-xl font-semibold">Shipping Information</h3>
@@ -19,13 +19,13 @@ function ShippingInformation({ user }) {
           <span className="block text-sm font-medium text-gray-700 mb-1">
             First Name
           </span>
-          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.firstName}</p>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.first_name}</p>
         </div>
         <div>
           <span className="block text-sm font-medium text-gray-700 mb-1">
             Last Name
           </span>
-          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.lastName}</p>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.last_name}</p>
         </div>
       </div>
       {/* Contact and Address Fields */}
@@ -41,7 +41,9 @@ function ShippingInformation({ user }) {
           <span className="block text-sm font-medium text-gray-700 mb-1">
             Mobile Number
           </span>
-          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.mobile}</p>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">
+            {user.profile.phone}
+          </p>
         </div>
       </div>
       <div>
@@ -49,7 +51,7 @@ function ShippingInformation({ user }) {
           Address
         </span>
         <p className="w-full p-2 bg-gray-50 rounded-lg">
-          {user.address.street}
+          {user.profile.street}
         </p>
       </div>
       <div className="grid grid-cols-2 gap-4">
@@ -58,14 +60,16 @@ function ShippingInformation({ user }) {
             City
           </span>
           <p className="w-full p-2 bg-gray-50 rounded-lg">
-            {user.address.city}
+            {user.profile.city}
           </p>
         </div>
         <div>
           <span className="block text-sm font-medium text-gray-700 mb-1">
             Postal Code
           </span>
-          <p className="w-full p-2 bg-gray-50 rounded-lg">{user.address.zip}</p>
+          <p className="w-full p-2 bg-gray-50 rounded-lg">
+            {user.profile.postal_code}
+          </p>
         </div>
       </div>
       <div className="flex justify-end">

@@ -3,9 +3,7 @@ import { Button } from "../../../common";
 function Cards() {
   return (
     <div>
-      <h3 className="text-sm font-medium text-gray-500 uppercase mb-4">
-        Cards
-      </h3>
+      <h3 className="text-base font-medium text-gray-800 mb-4">Cards</h3>
       <div className="bg-gray-100 rounded-md divide-y divide-gray-100">
         <div className="p-4 flex items-center justify-between hover:bg-gray-50">
           <div className="flex items-center space-x-4">

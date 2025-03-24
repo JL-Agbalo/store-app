@@ -21,7 +21,7 @@ function NavDropdown({ setIsLoggedIn, setIsCartOpen, setDropdownOpen, user }) {
       <div className="p-3 border-b border-gray-200">
         <div className="flex items-center gap-3">
           <div className="flex flex-col">
-            <span className="font-medium">{`${user.firstName} ${user.lastName}`}</span>
+            <span className="font-medium">{`${user.first_name} ${user.last_name}`}</span>
             <span className="text-xs text-gray-500">{user.email}</span>
           </div>
         </div>

@@ -4,8 +4,8 @@ function UserImage({ user }) {
   return (
     <div className="flex items-center gap-4">
       <img
-        src={user.image}
-        alt={user.name}
+        src={user.profile.avatar_url}
+        alt={user.first_name}
         className="w-20 h-20 rounded-full object-cover border-2 border-gray-200"
       />
       <div className="flex flex-col">

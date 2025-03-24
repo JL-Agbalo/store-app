@@ -6,14 +6,13 @@ import NavDropdown from "./NavDropdown";
 import MobileMenu from "./MobileMenu";
 import { CartModal } from "../cart";
 import { mainNavLinks } from "../../config/navigation";
-import { users } from "../../data/users/users";
+import { user } from "../../data/users/users";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const user = users[0]; // This will be moved to context later
 
   // Group auth-related props
   const authProps = {
@@ -73,7 +72,7 @@ function Navbar() {
                 className="flex items-center hover:text-gray-400 transition rounded-full "
               >
                 <Avatar
-                  src={user.image}
+                  src={user.profile.avatar_url}
                   alt="User Avatar"
                   hasNotification={true}
                   className="w-8 h-8"

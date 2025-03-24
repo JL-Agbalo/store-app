@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { users } from "../../data/users/users";
+import { user } from "../../data/users/users";
 import ShippingInformation from "./ShippingInformation";
 import PaymentInformation from "./PaymentInformation";
 import PaymentProcessing from "./PaymentProcessing";
@@ -7,7 +7,6 @@ import PaymentProcessing from "./PaymentProcessing";
 function CheckoutForm({ step, cartTotal }) {
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [isProcessing, setIsProcessing] = useState(false);
-  const user = users[0]; // This will be moved to context later
 
   // Group payment-related props
   const paymentProps = {

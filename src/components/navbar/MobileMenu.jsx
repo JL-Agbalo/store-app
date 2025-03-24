@@ -27,10 +27,10 @@ function MobileMenu({
         <div className="space-y-4">
           {isLoggedIn && (
             <UserProfileCard
-              firstName={user.firstName}
-              lastName={user.lastName}
+              firstName={user.first_name}
+              lastName={user.last_name}
               email={user.email}
-              image={user.image}
+              image={user.profile.avatar_url}
             />
           )}
 

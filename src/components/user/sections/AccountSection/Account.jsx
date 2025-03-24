@@ -5,11 +5,9 @@ import {
   ChangePassword,
   DeleteAccount,
 } from ".";
-import { users } from "../../../../data/users/users";
+import { user } from "../../../../data/users/users";
 
 function AccountSection() {
-  const user = users[0];
-
   return (
     <section className="p-5">
       <h2 className="text-xl font-semibold mb-4">Account Information</h2>
