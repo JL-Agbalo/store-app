@@ -91,7 +91,7 @@ const CategoryList = () => {
         <div className="mt-12 flex justify-end">
           <Link
             to="/categories"
-            className="text-black font-medium flex items-center gap-2 hover:underline"
+            className="text-sm hover:underline underline-offset-4"
           >
             Browse all categories →
           </Link>

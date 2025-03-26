@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   UpdateContactInfo,
   LinkedAccounts,
   ChangePassword,
   DeleteAccount,
 } from ".";
-import { user } from "../../../../data/users/users";
+import { getUserById } from "../../../../services/userService";
 
 function AccountSection() {
+  const [user] = useState(getUserById(1));
   return (
     <section className="p-5">
       <h2 className="text-xl font-semibold mb-4">Account Information</h2>

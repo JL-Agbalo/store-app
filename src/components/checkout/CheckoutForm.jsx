@@ -1,10 +1,13 @@
 import React, { useState } from "react";
-import { user } from "../../data/users/users";
+import { getUserById } from "../../services/userService";
+
 import ShippingInformation from "./ShippingInformation";
 import PaymentInformation from "./PaymentInformation";
 import PaymentProcessing from "./PaymentProcessing";
 
 function CheckoutForm({ step, cartTotal }) {
+  const [user] = useState(getUserById(1));
+
   const [paymentMethod, setPaymentMethod] = useState("card");
   const [isProcessing, setIsProcessing] = useState(false);
 

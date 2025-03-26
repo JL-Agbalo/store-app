@@ -6,14 +6,15 @@ import NavDropdown from "./NavDropdown";
 import MobileMenu from "./MobileMenu";
 import { CartModal } from "../cart";
 import { mainNavLinks } from "../../config/navigation";
-import { user } from "../../data/users/users";
+import { getUserById } from "../../services/userService";
 
 function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+  const [user] = useState(getUserById(1));
+  console.log(user);
   // Group auth-related props
   const authProps = {
     isLoggedIn,

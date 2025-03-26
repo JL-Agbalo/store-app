@@ -44,10 +44,7 @@ function Testimonials() {
       </div>
 
       <div className="flex justify-end mt-8">
-        <a
-          to="/"
-          className="text-black font-semibold hover:underline transition"
-        >
+        <a to="/" className="text-sm hover:underline underline-offset-4">
           Read More Reviews →
         </a>
       </div>

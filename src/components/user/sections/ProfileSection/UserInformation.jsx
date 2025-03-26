@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { UserProfile as Icons } from "../../../icons/Icons";
 import { Button } from "../../../common";
 function UserInformation({ user }) {
+  console.log(user);
   const [formData, setFormData] = useState({
     firstName: user.first_name,
     lastName: user.last_name,
