@@ -1,3 +1,4 @@
+// Remove
 import { products } from "../data/products/products";
 import { productImages } from "../data/products/productImages";
 import { categories } from "../data/products/categories";
