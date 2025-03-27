@@ -1,41 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Email, Password } from "../../../shared/components/icons/AuthIcons";
 import { AUTH_ROUTES } from "../../layout/constants/routes";
 import SocialMediaAuth from "./SocialMediaAuth";
-/**
- * SignInForm Component
- * Renders a form for user authentication/login
- * Contains fields for user credentials like username/email and password
- */
+import { useSignIn } from "../hooks/useSignIn";
+
 function SignInForm() {
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Basic validation
-    const newErrors = {};
-    if (!formData.email) newErrors.email = "Email is required";
-    if (!formData.password) newErrors.password = "Password is required";
-
-    if (Object.keys(newErrors).length === 0) {
-      // Handle form submission
-      console.log("Form submitted:", formData);
-    } else {
-      setErrors(newErrors);
-    }
-  };
+  const { register, handleSubmit, errors } = useSignIn();
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
       <div className="space-y-3">
         <div className="mb-4">
           <label className="block text-gray-700 text-xs font-semibold mb-1">
@@ -44,16 +18,14 @@ function SignInForm() {
           <div className="flex items-center border border-gray-300 rounded-lg p-2.5 focus-within:ring-2 focus-within:ring-black/5 focus-within:border-black transition-all duration-200 hover:border-gray-400">
             <Email className="text-gray-400 w-4 h-4 mr-2" />
             <input
+              {...register("email")}
               type="email"
-              name="email"
               className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-sm"
               placeholder="Enter your email"
-              value={formData.email}
-              onChange={handleChange}
             />
           </div>
           {errors.email && (
-            <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+            <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
           )}
         </div>
 
@@ -64,16 +36,16 @@ function SignInForm() {
           <div className="flex items-center border border-gray-300 rounded-lg p-2.5 focus-within:ring-2 focus-within:ring-black/5 focus-within:border-black transition-all duration-200 hover:border-gray-400">
             <Password className="text-gray-400 w-4 h-4 mr-2" />
             <input
+              {...register("password")}
               type="password"
-              name="password"
               className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-sm"
               placeholder="Enter your password"
-              value={formData.password}
-              onChange={handleChange}
             />
           </div>
           {errors.password && (
-            <p className="text-red-500 text-xs mt-1">{errors.password}</p>
+            <p className="text-red-500 text-xs mt-1">
+              {errors.password.message}
+            </p>
           )}
         </div>
 
