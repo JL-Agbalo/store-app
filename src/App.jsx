@@ -17,7 +17,7 @@ import NotFound from "./Npages/NotFound";
 import { PUBLIC_ROUTES, AUTH_ROUTES } from "./features/layout/constants/routes";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <Router>
