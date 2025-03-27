@@ -9,8 +9,8 @@ import AdminLayout from "./features/layout/components/Layout/AdminLayout";
 import Home from "./Npages/Home";
 import Products from "./Npages/Products";
 // import ProductDetail from "./Npages/Products/[id]";
-import Login from "./Npages/Auth/Login";
-import Register from "./Npages/Auth/Register";
+import SignIn from "./Npages/Auth/SignIn";
+import SignUp from "./Npages/Auth/SignUp";
 import Cart from "./Npages/Cart";
 import NotFound from "./Npages/NotFound";
 
@@ -36,8 +36,8 @@ function App() {
         {/* Only show auth routes if not authenticated */}
         {!isAuthenticated && (
           <Route element={<AuthLayout />}>
-            <Route path={AUTH_ROUTES.LOGIN} element={<Login />} />
-            <Route path={AUTH_ROUTES.REGISTER} element={<Register />} />
+            <Route path={AUTH_ROUTES.SIGNIN} element={<SignIn />} />
+            <Route path={AUTH_ROUTES.SIGNUP} element={<SignUp />} />
           </Route>
         )}
 

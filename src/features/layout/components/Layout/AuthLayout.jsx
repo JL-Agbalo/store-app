@@ -1,20 +1,12 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
-/**
- * AuthLayout Component
- *
- * Layout for authentication pages:
- * - Simplified header
- * - Centered content
- * - No sidebar/navigation
- * - Background styling
- * - Logo placement
- *
- * Props:
- * - children: React.ReactNode
- */
 function AuthLayout() {
-  return <div>AuthLayout</div>;
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Outlet />
+    </div>
+  );
 }
 
 export default AuthLayout;
