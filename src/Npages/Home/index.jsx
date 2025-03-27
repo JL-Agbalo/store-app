@@ -4,9 +4,14 @@
  * Including Hero, FeaturedProducts, and Categories
  */
 import React from "react";
+import Hero from "./components/Hero";
 
-function index() {
-  return <div>index</div>;
+function Home() {
+  return (
+    <main className="min-h-screen">
+      <Hero />
+    </main>
+  );
 }
 
-export default index;
+export default Home;

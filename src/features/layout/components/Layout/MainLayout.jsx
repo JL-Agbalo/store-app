@@ -1,4 +1,6 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "../Navigation/Navbar";
 
 /**
  * MainLayout Component
@@ -14,8 +16,15 @@ import React from "react";
  * - children: React.ReactNode
  */
 
-function MainLayout() {
-  return <div>MainLayout</div>;
+function MainLayout({ isAuthenticated }) {
+  return (
+    <div>
+      <Navbar isAuthenticated={isAuthenticated} />
+      <main>
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
 export default MainLayout;

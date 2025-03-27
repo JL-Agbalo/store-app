@@ -1,14 +1,24 @@
-/**
- * Application Routes
- *
- * Define all route constants:
- * - PUBLIC_ROUTES (home, products, etc.)
- * - AUTH_ROUTES (login, register, etc.)
- * - ADMIN_ROUTES (dashboard, products management, etc.)
- * - USER_ROUTES (profile, orders, etc.)
- *
- * Example:
- * export const HOME = '/'
- * export const LOGIN = '/auth/login'
- * export const ADMIN_DASHBOARD = '/admin'
- */
+export const PUBLIC_ROUTES = {
+  HOME: "/",
+  PRODUCTS: "/products",
+  PRODUCT_DETAIL: "/products/:id",
+  CART: "/cart",
+  CHECKOUT: "/checkout",
+};
+
+export const AUTH_ROUTES = {
+  LOGIN: "/login",
+  REGISTER: "/register",
+};
+
+export const PROFILE_ROUTES = {
+  PROFILE: "/profile",
+  ORDERS: "/profile/orders",
+  ADDRESSES: "/profile/addresses",
+};
+
+export const ADMIN_ROUTES = {
+  DASHBOARD: "/admin",
+  PRODUCTS: "/admin/products",
+  ORDERS: "/admin/orders",
+};
