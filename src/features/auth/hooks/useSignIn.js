@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { loginSchema } from "../schemas/SignInSchema";
+import { signInSchema } from "../schemas/SignInSchema";
 
 export const useSignIn = () => {
   const {
@@ -9,7 +9,7 @@ export const useSignIn = () => {
     formState: { errors },
     setError,
   } = useForm({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(signInSchema),
     defaultValues: {
       email: "",
       password: "",
