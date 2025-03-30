@@ -1,15 +1,13 @@
 import { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { PrivateRoutes, PublicRoutes } from "./routes";
 import {
-  PrivateRoutes,
-  PublicRoutes,
   privateRoutes,
   publicRoutes,
   commonRoutes,
-} from "./routes";
+} from "./routes/routeConfig";
 import MainLayout from "./features/layout/components/Layout/MainLayout";
 import AuthLayout from "./features/layout/components/Layout/AuthLayout";
-// import NotFound from "./pages/NotFound";
 
 function App() {
   return (
