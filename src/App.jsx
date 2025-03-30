@@ -1,58 +1,62 @@
-import React, { useState } from "react";
-
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Suspense } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {
+  PrivateRoutes,
+  PublicRoutes,
+  privateRoutes,
+  publicRoutes,
+  commonRoutes,
+} from "./routes";
 import MainLayout from "./features/layout/components/Layout/MainLayout";
 import AuthLayout from "./features/layout/components/Layout/AuthLayout";
-import AdminLayout from "./features/layout/components/Layout/AdminLayout";
-
-// Page imports
-import Home from "./Npages/Home";
-import Products from "./Npages/Products";
-// import ProductDetail from "./Npages/Products/[id]";
-import SignIn from "./Npages/Auth/SignIn";
-import SignUp from "./Npages/Auth/SignUp";
-import Cart from "./Npages/Cart";
-import NotFound from "./Npages/NotFound";
-
-import { PUBLIC_ROUTES, AUTH_ROUTES } from "./features/layout/constants/routes";
+// import NotFound from "./pages/NotFound";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
-
   return (
-    <Router>
-      <Routes>
-        {/* Public routes */}
-        <Route element={<MainLayout isAuthenticated={isAuthenticated} />}>
-          <Route path={PUBLIC_ROUTES.HOME} element={<Home />} />
-          <Route path={PUBLIC_ROUTES.PRODUCTS} element={<Products />} />
-          {/* <Route
-            path={PUBLIC_ROUTES.PRODUCT_DETAIL}
-            element={<ProductDetail />}
-          /> */}
-          <Route path={PUBLIC_ROUTES.CART} element={<Cart />} />
-        </Route>
-
-        {/* Only show auth routes if not authenticated */}
-        {!isAuthenticated && (
-          <Route element={<AuthLayout />}>
-            <Route path={AUTH_ROUTES.SIGNIN} element={<SignIn />} />
-            <Route path={AUTH_ROUTES.SIGNUP} element={<SignUp />} />
+    <BrowserRouter>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          {/* Common Pages - Available to all */}
+          <Route element={<MainLayout />}>
+            {commonRoutes.map((route) => (
+              <Route
+                key={route.path}
+                path={route.path}
+                element={route.element}
+              />
+            ))}
           </Route>
-        )}
 
-        {/* Add Protected Routes for
-        Profile
-        Cart
-        Checkout 
-        Etc */}
-        {/* https://www.youtube.com/watch?v=pyfwQUc5Ssk
-        https://www.youtube.com/watch?v=zKlpiQvPKHI */}
+          {/* Auth Pages */}
+          <Route element={<PublicRoutes />}>
+            <Route element={<AuthLayout />}>
+              {publicRoutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
+            </Route>
+          </Route>
 
-        {/* 404 route */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Router>
+          {/* Protected Pages */}
+          <Route element={<PrivateRoutes />}>
+            <Route element={<MainLayout />}>
+              {privateRoutes.map((route) => (
+                <Route
+                  key={route.path}
+                  path={route.path}
+                  element={route.element}
+                />
+              ))}
+            </Route>
+          </Route>
+
+          {/* <Route path="*" element={<NotFound />} /> */}
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

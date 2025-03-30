@@ -1,78 +1,46 @@
+/**
+ * @fileoverview Registration page component
+ * Handles new user account creation
+ * Includes form for user details and validation
+ */
 import React from "react";
-import { Link } from "react-router-dom";
-import { SocialMedia } from "../../components/common";
+import SignUpForm from "../../features/auth/components/SignUpForm";
 
-function Signup() {
+function SignUp() {
   return (
     <div className="flex flex-col md:flex-row min-h-screen">
       {/* Left - Text Content */}
-      <div className="hidden md:flex w-1/2 items-center justify-center bg-black text-white p-10">
-        <div className="text-center">
-          <h2 className="text-4xl font-semibold mb-4">Welcome to Our Store</h2>
-          <p className="text-lg mb-6 text-gray-300">
+      <div className="hidden md:flex w-1/2 items-center justify-center bg-black text-white p-10 animate-fadeIn">
+        <div className="text-center max-w-lg mx-auto">
+          <h2 className="text-5xl font-bold mb-6 leading-tight">
+            Welcome to Our Store
+          </h2>
+          <p className="text-xl mb-8 text-gray-300 leading-relaxed">
             Experience the best shopping experience with us. Discover a wide
             range of products and enjoy seamless shopping.
           </p>
-          <button className="bg-white text-black px-6 py-3 rounded-lg hover:bg-gray-200 transition">
+          <button className="bg-white text-black px-8 py-4 rounded-lg hover:bg-gray-200 transition-all duration-300 transform hover:scale-105 font-semibold text-lg">
             Learn More
           </button>
         </div>
       </div>
 
       {/* Right - Signup Form */}
-      <div className="w-full md:w-1/2 flex items-center justify-center bg-white text-black p-10">
-        <div className="w-full max-w-md">
-          <h2 className="text-4xl font-bold text-center mb-4">
+      <div className="w-full md:w-1/2 flex items-center justify-center p-6 lg:p-20 animate-slideIn">
+        <div className="w-full max-w-[450px]">
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-600">
             Create Account
           </h2>
-          <p className="text-center text-gray-500 mb-8">
+          <p className="text-center text-gray-600 mb-10 text-lg">
             Join us for the best shopping experience
           </p>
-          <form>
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Name</label>
-              <input
-                type="text"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-                placeholder="Enter your name"
-              />
-            </div>
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Email</label>
-              <input
-                type="email"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-                placeholder="Enter your email"
-              />
-            </div>
-            <div className="mb-6">
-              <label className="block text-gray-700 mb-2">Password</label>
-              <input
-                type="password"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-                placeholder="Create a password"
-              />
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-black text-white py-3 rounded-lg hover:bg-gray-900 transition duration-300 font-semibold mb-6"
-            >
-              Sign Up
-            </button>
-            {/* Social Media Signup */}
-            <SocialMedia title={"Or sign up with"} />
-
-            <p className="text-center text-gray-500 mt-6">
-              Already have an account?{" "}
-              <Link to="/login" className="text-black font-semibold">
-                Sign In
-              </Link>
-            </p>
-          </form>
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <SignUpForm />
+          </div>
         </div>
       </div>
     </div>
   );
 }
 
-export default Signup;
+export default SignUp;

@@ -1,20 +1,20 @@
 import React from "react";
+import { PrivateRoute } from "../../../../routes/PrivateRoutes";
 
-/**
- * AdminLayout Component
- *
- * Admin dashboard layout:
- * - Admin navigation
- * - Sidebar with admin menu
- * - Header with admin controls
- * - Protected route wrapper
- *
- * Props:
- * - children: React.ReactNode
- */
-
-function AdminLayout() {
-  return <div>AdminLayout</div>;
-}
+const AdminLayout = ({ children }) => {
+  return (
+    <PrivateRoute>
+      <div className="admin-layout">
+        <header className="admin-header">
+          {/* Add your admin header/navigation here */}
+        </header>
+        <main className="admin-main">{children}</main>
+        <footer className="admin-footer">
+          {/* Add your admin footer content here */}
+        </footer>
+      </div>
+    </PrivateRoute>
+  );
+};
 
 export default AdminLayout;

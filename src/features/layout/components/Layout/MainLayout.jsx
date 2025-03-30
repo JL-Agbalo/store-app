@@ -1,30 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import Navbar from "../Navigation/Navbar";
 
-/**
- * MainLayout Component
- *
- * Main application wrapper that should include:
- * - Navbar
- * - Sidebar (if needed)
- * - Main content area
- * - Footer
- * - Toast notifications container
- *
- * Props:
- * - children: React.ReactNode
- */
-
-function MainLayout({ isAuthenticated }) {
+const MainLayout = () => {
   return (
-    <div>
-      <Navbar isAuthenticated={isAuthenticated} />
+    <div className="min-h-screen">
+      <header>{/* Add your header/navigation here */}</header>
       <main>
         <Outlet />
       </main>
+      <footer>{/* Add your footer here */}</footer>
     </div>
   );
-}
+};
 
 export default MainLayout;
