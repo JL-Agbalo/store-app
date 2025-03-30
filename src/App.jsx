@@ -17,7 +17,7 @@ import NotFound from "./Npages/NotFound";
 import { PUBLIC_ROUTES, AUTH_ROUTES } from "./features/layout/constants/routes";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <Router>
@@ -40,6 +40,14 @@ function App() {
             <Route path={AUTH_ROUTES.SIGNUP} element={<SignUp />} />
           </Route>
         )}
+
+        {/* Add Protected Routes for
+        Profile
+        Cart
+        Checkout 
+        Etc */}
+        {/* https://www.youtube.com/watch?v=pyfwQUc5Ssk
+        https://www.youtube.com/watch?v=zKlpiQvPKHI */}
 
         {/* 404 route */}
         <Route path="*" element={<NotFound />} />

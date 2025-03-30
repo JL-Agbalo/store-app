@@ -5,10 +5,11 @@ import UserMenu from "./UserMenu";
 import MobileMenu from "./MobileMenu";
 import { mainNavLinks } from "../../config/navigation";
 import { PUBLIC_ROUTES, AUTH_ROUTES } from "../../constants/routes";
-
-function Navbar({ isAuthenticated = false, setIsAuthenticated, user }) {
+import { getUserById } from "../../../../services/userService";
+function Navbar({ isAuthenticated = false, setIsAuthenticated }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  const [user] = useState(getUserById(1));
 
   return (
     <>
