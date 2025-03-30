@@ -19,7 +19,6 @@ import { userNavLinks } from "../../config/navigation";
 
 function UserMenu({ user, setIsAuthenticated, setIsCartOpen }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-
   return (
     <div className="relative">
       <button

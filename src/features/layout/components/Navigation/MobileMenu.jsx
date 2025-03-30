@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import UserProfileCard from "../../../../shared/components/UserProfileCard";
 import {
   Close,
   Logout,
 } from "../../../../shared/components/icons/NavigationIcons";
 import { mainNavLinks, userNavLinks } from "../../config/navigation";
+import { AUTH_ROUTES } from "../../constants/routes";
 
 function MobileMenu({
   isOpen,
@@ -32,7 +32,7 @@ function MobileMenu({
             <h1>User Profile Card</h1>
             // <UserProfileCard
             //   firstName={user.first_name}
-            //   lastName={user.last_name}
+            //   lastName={user.lastName}
             //   email={user.email}
             //   image={user.profile?.avatar_url}
             // />
@@ -78,14 +78,14 @@ function MobileMenu({
             <>
               <div className="h-px bg-gray-200 my-4" />
               <Link
-                to="/login"
+                to={AUTH_ROUTES.SIGNIN}
                 className="block py-2 hover:text-gray-600"
                 onClick={onClose}
               >
-                Login
+                Sign In
               </Link>
               <Link
-                to="/signup"
+                to={AUTH_ROUTES.SIGNUP}
                 className="block py-2 hover:text-gray-600"
                 onClick={onClose}
               >

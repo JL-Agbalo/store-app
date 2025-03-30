@@ -1,38 +1,17 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { SocialMedia } from "../../../components/common";
+import SocialMediaAuth from "./SocialMediaAuth";
 import { AUTH_ROUTES } from "../../layout/constants/routes";
+import { useSignUp } from "../hooks/useSignUp";
+import { Eye, EyeOff } from "../../../shared/components/icons/AuthIcons";
 
 function SignUpForm() {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-  });
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newErrors = {};
-    if (!formData.firstName) newErrors.firstName = "First name is required";
-    if (!formData.lastName) newErrors.lastName = "Last name is required";
-    if (!formData.email) newErrors.email = "Email is required";
-    if (!formData.password) newErrors.password = "Password is required";
-
-    if (Object.keys(newErrors).length === 0) {
-      console.log("Form submitted:", formData);
-    } else {
-      setErrors(newErrors);
-    }
-  };
+  const { register, handleSubmit, errors } = useSignUp();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4" noValidate>
       <div className="space-y-3">
         <div className="mb-4">
           <label className="block text-gray-700 text-xs font-semibold mb-1">
@@ -40,14 +19,14 @@ function SignUpForm() {
           </label>
           <input
             type="text"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
+            {...register("firstName")}
             className="w-full p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black/5 focus:border-black transition-all duration-200 hover:border-gray-400"
             placeholder="Enter your first name"
           />
           {errors.firstName && (
-            <p className="text-red-500 text-xs mt-1">{errors.firstName}</p>
+            <p className="text-red-500 text-xs mt-1">
+              {errors.firstName.message}
+            </p>
           )}
         </div>
         <div className="mb-4">
@@ -56,14 +35,14 @@ function SignUpForm() {
           </label>
           <input
             type="text"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
+            {...register("lastName")}
             className="w-full p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
             placeholder="Last name"
           />
           {errors.lastName && (
-            <p className="text-red-500 text-xs mt-1">{errors.lastName}</p>
+            <p className="text-red-500 text-xs mt-1">
+              {errors.lastName.message}
+            </p>
           )}
         </div>
         <div className="mb-4">
@@ -72,40 +51,73 @@ function SignUpForm() {
           </label>
           <input
             type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
+            {...register("email")}
             className="w-full p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
             placeholder="Enter your email"
           />
           {errors.email && (
-            <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+            <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>
           )}
         </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-xs font-semibold mb-1">
             Password
           </label>
-          <input
-            type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            className="w-full p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
-            placeholder="Create a password"
-          />
+          <div className="relative">
+            <input
+              type={showPassword ? "text" : "password"}
+              {...register("password")}
+              className="w-full p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+              placeholder="Create a password"
+            />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2"
+            >
+              {showPassword ? <EyeOff /> : <Eye />}
+            </button>
+          </div>
           {errors.password && (
-            <p className="text-red-500 text-xs mt-1">{errors.password}</p>
+            <p className="text-red-500 text-xs mt-1">
+              {errors.password.message}
+            </p>
           )}
         </div>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-xs font-semibold mb-1">
+            Confirm Password
+          </label>
+          <div className="relative">
+            <input
+              type={showConfirmPassword ? "text" : "password"}
+              {...register("confirmPassword")}
+              className="w-full p-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black"
+              placeholder="Confirm your password"
+            />
+            <button
+              type="button"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+              className="absolute right-3 top-1/2 -translate-y-1/2"
+            >
+              {showConfirmPassword ? <EyeOff /> : <Eye />}
+            </button>
+          </div>
+          {errors.confirmPassword && (
+            <p className="text-red-500 text-xs mt-1">
+              {errors.confirmPassword.message}
+            </p>
+          )}
+        </div>
+
         <button
           type="submit"
-          className="w-full bg-black text-white py-2.5 rounded-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-[1.02] font-semibold text-sm shadow-md hover:shadow-xl mb-4"
+          className="w-full bg-black text-white py-2.5 rounded-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-[1.02] font-semibold text-sm shadow-md hover:shadow-xl"
         >
           Create Account
         </button>
 
-        <SocialMedia title={"Or continue with"} />
+        <SocialMediaAuth title={"Or continue with"} />
 
         <p className="text-center text-gray-600 text-sm mt-4">
           Already have an account?{" "}

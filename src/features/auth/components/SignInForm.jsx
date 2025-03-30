@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Email, Password } from "../../../shared/components/icons/AuthIcons";
+import {
+  Email,
+  Password,
+  Eye,
+  EyeOff,
+} from "../../../shared/components/icons/AuthIcons";
 import { AUTH_ROUTES } from "../../layout/constants/routes";
 import SocialMediaAuth from "./SocialMediaAuth";
 import { useSignIn } from "../hooks/useSignIn";
 
 function SignInForm() {
   const { register, handleSubmit, errors } = useSignIn();
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>
@@ -37,10 +43,21 @@ function SignInForm() {
             <Password className="text-gray-400 w-4 h-4 mr-2" />
             <input
               {...register("password")}
-              type="password"
+              type={showPassword ? "text" : "password"}
               className="w-full focus:outline-none text-gray-900 placeholder-gray-400 text-sm"
               placeholder="Enter your password"
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="text-gray-400 hover:text-gray-600"
+            >
+              {showPassword ? (
+                <EyeOff className="w-4 h-4" />
+              ) : (
+                <Eye className="w-4 h-4" />
+              )}
+            </button>
           </div>
           {errors.password && (
             <p className="text-red-500 text-xs mt-1">
@@ -67,7 +84,7 @@ function SignInForm() {
 
         <button
           type="submit"
-          className="w-full bg-black text-white py-2.5 rounded-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-[1.02] font-semibold text-sm shadow-md hover:shadow-xl mb-4"
+          className="w-full bg-black text-white py-2.5 rounded-lg hover:bg-gray-900 transition-all duration-300 transform hover:scale-[1.02] font-semibold text-sm shadow-md hover:shadow-xl"
         >
           Sign In
         </button>

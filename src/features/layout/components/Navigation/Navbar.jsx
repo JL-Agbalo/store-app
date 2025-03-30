@@ -4,6 +4,7 @@ import { Menu, Bag } from "../../../../shared/components/icons/NavigationIcons";
 import UserMenu from "./UserMenu";
 import MobileMenu from "./MobileMenu";
 import { mainNavLinks } from "../../config/navigation";
+import { PUBLIC_ROUTES, AUTH_ROUTES } from "../../constants/routes";
 
 function Navbar({ isAuthenticated = false, setIsAuthenticated, user }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -42,7 +43,10 @@ function Navbar({ isAuthenticated = false, setIsAuthenticated, user }) {
           <div className="hidden md:flex items-center space-x-6">
             {isAuthenticated ? (
               <div className="flex items-center gap-4">
-                <Link to="/cart" className="flex items-center hover:opacity-80">
+                <Link
+                  to={PUBLIC_ROUTES.CART}
+                  className="flex items-center hover:opacity-80"
+                >
                   <Bag className="w-6 h-6" />
                 </Link>
                 <div className="flex items-center">
@@ -55,11 +59,17 @@ function Navbar({ isAuthenticated = false, setIsAuthenticated, user }) {
               </div>
             ) : (
               <div className="flex items-center space-x-4">
-                <Link to="/login" className="hover:text-gray-400 transition">
-                  Login
+                <Link
+                  to={AUTH_ROUTES.SIGNIN}
+                  className="hover:text-gray-400 transition"
+                >
+                  Sign In
                 </Link>
                 <span>|</span>
-                <Link to="/signup" className="hover:text-gray-400 transition">
+                <Link
+                  to={AUTH_ROUTES.SIGNUP}
+                  className="hover:text-gray-400 transition"
+                >
                   Sign Up
                 </Link>
               </div>
